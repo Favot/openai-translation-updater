@@ -1,0 +1,31 @@
+{
+  "screen": {
+    "welcomeScreen": {
+      "title": "",
+      "description": ""
+    },
+    "mainScreen": {
+      "title": "",
+      "description": ""
+    }
+  },
+  "component": {
+    "button": {
+      "title": "",
+      "description": ""
+    },
+    "input": {
+      "title": "",
+      "description": ""
+    }
+  },
+  "common": {
+    "text": {
+      "cancel": "",
+      "validate": ""
+    },
+    "unit": {
+      "currency": ""
+    }
+  }
+}
