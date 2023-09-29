@@ -1,0 +1,38 @@
+{
+  "appContext": "This is a example for the testing the package to translate and update translation files using OpenAI",
+  "screen": {
+    "welcomeScreen": {
+      "context": "This screen is the first screen of the app to welcome the user",
+      "title": "",
+      "description": ""
+    },
+    "mainScreen": {
+      "context": "This screen is the main screen of the app",
+      "title": "",
+      "description": ""
+    }
+  },
+  "component": {
+    "OpenModalButton": {
+      "context": "This component is a button to modal in the app",
+      "title": "",
+      "description": ""
+    },
+    "nameInput": {
+      "context": "This component is a name input",
+      "title": "",
+      "description": ""
+    }
+  },
+  "common": {
+    "text": {
+      "context": "This text mean to be used everywhere accross the app",
+      "cancel": "",
+      "validate": ""
+    },
+    "unit": {
+      "context": "Localize the unit according to the language of the file",
+      "currency": ""
+    }
+  }
+}
