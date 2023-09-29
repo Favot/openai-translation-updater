@@ -10,6 +10,14 @@
   "author": "Favot",
   "license": "ISC",
   "devDependencies": {
+    "@types/shelljs": "^0.8.13",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security",
+    "openai": "^4.10.0",
+    "path": "^0.12.7",
+    "shelljs": "^0.8.5"
   }
 }
