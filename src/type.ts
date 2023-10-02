@@ -1,5 +1,6 @@
 export type UpdatedTranslationItem = {
-  screenName: string;
+  primaryKey: string;
+  secondaryKey: string;
   context: string;
   translationKey: string;
   updatedTranslation: string;
@@ -16,6 +17,6 @@ export type TranslationContent = {
 };
 
 export type ScreenValue = {
-  screenContext: string;
+  context: string;
   [key: string]: any;
 };
