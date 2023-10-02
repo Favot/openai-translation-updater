@@ -6,9 +6,10 @@ export const updatedItemsToString = (
   return updatedItems
     .map((item) => {
       return (
-        `screenName: ${item.screenName}\n` +
+        `primaryKey: ${item.primaryKey}\n` +
+        `secondaryKey: ${item.secondaryKey}\n` +
         `context: ${item.context}\n` +
-        `translationKey: ${item.translationKey}\n` +
+        `translatedItemKey: ${item.translationKey}\n` +
         `updatedTranslation: ${item.updatedTranslation}\n`
       );
     })
