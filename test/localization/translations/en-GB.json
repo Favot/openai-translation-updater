@@ -3,7 +3,7 @@
   "screen": {
     "welcomeScreen": {
       "context": "This screen is the first screen of the app to welcome the user",
-      "title": "",
+      "title": "Welcome to the package to update your translation files on the fly",
       "description": ""
     },
     "mainScreen": {

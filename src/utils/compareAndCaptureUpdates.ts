@@ -2,6 +2,7 @@ import {
   ScreenValue,
   TranslationContent,
   UpdatedTranslationData,
+  UpdatedTranslationItem,
 } from "../type";
 
 export const compareAndCaptureUpdates = (
@@ -13,45 +14,40 @@ export const compareAndCaptureUpdates = (
     updatedItems: [],
   };
 
-  for (const [context, contextValue] of Object.entries(stagedContent)) {
-    if (context === "appContext") {
-      if (
-        !headContent.hasOwnProperty(context) ||
-        headContent[context] !== contextValue
-      ) {
-        updatedTranslationData.appContext = contextValue as string;
-      }
-    }
-    if (typeof contextValue === "object") {
-      for (const [screenName, screenValue] of Object.entries(
-        contextValue as Record<string, ScreenValue>
+  for (const [primaryKey, primaryValue] of Object.entries(stagedContent)) {
+    if (primaryKey !== "appContext" && typeof primaryValue === "object") {
+      for (const [secondaryKey, secondaryValue] of Object.entries(
+        primaryValue as Record<string, ScreenValue>
       )) {
-        if (typeof screenValue === "object" && screenValue !== null) {
-          const screenContext = screenValue["screenContext"] as string;
-          for (const [key, value] of Object.entries(screenValue)) {
+        if (typeof secondaryValue === "object" && secondaryValue !== null) {
+          for (const [translationKey, updatedTranslation] of Object.entries(
+            secondaryValue
+          )) {
             if (
-              !headContent[context]?.[screenName]?.hasOwnProperty(key) ||
-              headContent[context][screenName][key] !== value
+              !headContent[primaryKey]?.[secondaryKey]?.hasOwnProperty(
+                translationKey
+              ) ||
+              headContent[primaryKey][secondaryKey][translationKey] !==
+                updatedTranslation
             ) {
-              updatedTranslationData.updatedItems.push({
-                screenName,
-                context: screenContext,
-                translationKey: key,
-                updatedTranslation: value as string,
-              });
+              const updatedItem: UpdatedTranslationItem = {
+                primaryKey,
+                secondaryKey,
+                context: headContent[primaryKey]?.[secondaryKey]?.context,
+                translationKey: translationKey,
+                updatedTranslation: updatedTranslation as string,
+              };
+              updatedTranslationData.updatedItems.push(updatedItem);
             }
           }
         }
       }
+    } else if (
+      primaryKey === "appContext" &&
+      headContent[primaryKey] !== primaryValue
+    ) {
+      updatedTranslationData.appContext = primaryValue as string;
     }
-  }
-
-  // If there are any updated items, update appContext from stagedContent if available
-  if (
-    updatedTranslationData.updatedItems.length > 0 &&
-    stagedContent.hasOwnProperty("appContext")
-  ) {
-    updatedTranslationData.appContext = stagedContent.appContext ?? null;
   }
 
   return updatedTranslationData;
