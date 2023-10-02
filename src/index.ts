@@ -1,4 +1,3 @@
-import env from "dotenv";
 import OpenAI from "openai";
 import {
   generateOpenAiAssistantContent,
@@ -7,11 +6,6 @@ import {
   processTranslatedFile,
   updateOtherLanguage,
 } from "./utils";
-const LANGUAGES = ["de", "fr", "en-us", "th"];
-
-const TRANSLATION_DIR = "./src/localization/translations";
-
-const openAiApiKey = env.config().parsed?.OPENAI_API_KEY;
 
 export const updateTranslationFileOnCommit = async ({
   openAiApiKey,
@@ -87,8 +81,6 @@ export const updateTranslationFileOnCommit = async ({
     const responds = JSON.parse(
       Buffer.from(respondContent, "utf-8").toString("utf-8")
     );
-    console.log("🚀 ~ file: index.ts:91 ~ responds:", responds);
-    console.log("🚀 ~ file: index.ts:92 ~ responds:", typeof responds);
 
     updateOtherLanguage({
       otherLanguage,
