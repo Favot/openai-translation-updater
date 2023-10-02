@@ -1,38 +1,40 @@
 {
-  "appContext": "This is a example for the testing the package to translate and update translation files using OpenAI",
+  "appContext": "This is a example for the app testing OpenAI to translate and update translation files",
   "screen": {
     "welcomeScreen": {
       "context": "This screen is the first screen of the app to welcome the user",
-      "title": "Welcome to the package to update your translation files on the fly",
-      "description": ""
+      "title": "Welcome to the test app",
+      "description": "This is a description for the welcome screen of the test app"
     },
     "mainScreen": {
       "context": "This screen is the main screen of the app",
-      "title": "",
-      "description": ""
+      "title": "Main screen of the app",
+      "description": "This is a description for the main screen to test the translation of the app in different languages"
     }
   },
   "component": {
-    "OpenModalButton": {
-      "context": "This component is a button to modal in the app",
-      "title": "",
-      "description": ""
+    "context": "This is a component to test the translation of the app",
+    "button": {
+      "context": "This is a button to open the modal of the test app",
+      "title": "open the unique modal of the test app",
+      "description": "you can open the modal by pressing on the button"
     },
-    "nameInput": {
-      "context": "This component is a name input",
-      "title": "",
-      "description": ""
+    "input": {
+      "context": "This is an input to type the name of the user",
+      "title": "Family name",
+      "description": "Type your family name here"
     }
   },
   "common": {
+    "context": "This is a common context for the app",
     "text": {
-      "context": "This text mean to be used everywhere accross the app",
-      "cancel": "",
-      "validate": ""
+      "context": "This is a text to test the translation of the app",
+      "cancel": "Cancel Button",
+      "validate": "Validate Button"
     },
     "unit": {
       "context": "Localize the unit according to the language of the file",
-      "currency": ""
+      "currency": "Pound Sterling"
     }
   }
 }
