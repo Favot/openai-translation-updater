@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1696233280255" clover="3.2.0">
-  <project timestamp="1696233280255" name="All files">
+<coverage generated="1696234288798" clover="3.2.0">
+  <project timestamp="1696234288798" name="All files">
     <metrics statements="50" coveredstatements="49" conditionals="43" coveredconditionals="34" methods="7" coveredmethods="7" elements="100" coveredelements="90" complexity="0" loc="50" ncloc="50" packages="1" files="6" classes="6"/>
     <file name="compareAndCaptureUpdates.ts" path="/Users/smt/development/package/openai-translation-updater/src/utils/compareAndCaptureUpdates.ts">
       <metrics statements="21" coveredstatements="20" conditionals="38" coveredconditionals="29" methods="1" coveredmethods="1"/>
@@ -66,9 +66,9 @@
     </file>
     <file name="updatedItemsToString.ts" path="/Users/smt/development/package/openai-translation-updater/src/utils/updatedItemsToString.ts">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="6" count="2" type="stmt"/>
-      <line num="8" count="4" type="stmt"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="6" count="5" type="stmt"/>
+      <line num="8" count="7" type="stmt"/>
     </file>
   </project>
 </coverage>
