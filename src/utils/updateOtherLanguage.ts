@@ -18,10 +18,6 @@ export const updateOtherLanguage = ({
       : {};
 
     responds[lang].forEach((item: UpdatedTranslationItem) => {
-      console.log(
-        "🚀 ~ file: updateOtherLanguage.ts:28 ~ responds[lang].forEach ~ item:",
-        item
-      );
       const primaryKey = item.primaryKey;
       const secondaryKey = item.secondaryKey;
       const translatedItemKey = item.translationKey;
