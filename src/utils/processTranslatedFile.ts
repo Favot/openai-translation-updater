@@ -10,5 +10,5 @@ export const processTranslatedFile = (file: string) => {
   const stagedContent = getFileContent("", file);
   const headContent = getFileContent("HEAD", file);
 
-  return compareAndCaptureUpdates(stagedContent, headContent);
+  return compareAndCaptureUpdates({ stagedContent, headContent });
 };
