@@ -6,6 +6,7 @@ import {
   processTranslatedFile,
   updateOtherLanguage,
 } from "./utils";
+import { noTranslationUpdatesFound } from "./utils/getChangedTranslationFile";
 
 export const updateTranslationFileOnCommit = async ({
   openAiApiKey,
@@ -30,6 +31,10 @@ export const updateTranslationFileOnCommit = async ({
     const changedTranslationFile = await getChangedTranslationFile({
       defaultLanguage,
     });
+
+    if (changedTranslationFile === noTranslationUpdatesFound) {
+      return;
+    }
 
     if (changedTranslationFile instanceof Error) {
       console.log(changedTranslationFile.message);
@@ -88,7 +93,7 @@ export const updateTranslationFileOnCommit = async ({
       translationDirectory: translationDirectory,
     });
   } catch (error) {
-    console.log("Error:", error);
+    console.log(error);
     return;
   }
 };

@@ -1,5 +1,8 @@
 import { executeCommand } from "./executeCommand";
 
+export const noTranslationUpdatesFound =
+  "No base translation file updates found, skipping";
+
 export const getChangedTranslationFile = ({
   defaultLanguage,
 }: {
@@ -9,11 +12,7 @@ export const getChangedTranslationFile = ({
   const output = executeCommand(command);
 
   if (!output) {
-    return Promise.reject(
-      new Error(
-        "No translation file updates found, make sure you correctly staged the file"
-      )
-    );
+    return Promise.resolve(noTranslationUpdatesFound);
   }
 
   const isMultipleFiles = output.split("\n").length > 1;
