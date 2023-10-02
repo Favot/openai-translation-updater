@@ -35,7 +35,10 @@ export const compareAndCaptureUpdates = ({
     }
 
     for (const [secondaryKey, secondaryValue] of Object.entries(primaryValue)) {
-      if (!secondaryValue || typeof secondaryValue !== "object") {
+      if (
+        !secondaryValue ||
+        (typeof secondaryValue !== "object" && secondaryKey !== "context")
+      ) {
         throw new Error(
           `🚨 ${secondaryKey} is not an object. Please check your translation file.`
         );
@@ -58,7 +61,7 @@ export const compareAndCaptureUpdates = ({
         ) {
           const context = headContent[primaryKey]?.[secondaryKey]?.context;
 
-          if (typeof context !== "string") {
+          if (typeof context !== "string" && secondaryKey !== "context") {
             console.log(
               `🚨 There is not context implemented for the key: ${secondaryKey}, make sure it's not required.`
             );

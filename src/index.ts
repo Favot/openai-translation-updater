@@ -28,6 +28,8 @@ export const updateTranslationFileOnCommit = async ({
       apiKey: openAiApiKey,
     });
 
+    console.log("get changed translation file");
+
     const changedTranslationFile = await getChangedTranslationFile({
       defaultLanguage,
     });
@@ -40,6 +42,8 @@ export const updateTranslationFileOnCommit = async ({
       console.log(changedTranslationFile.message);
       return;
     }
+
+    console.log("process translated file");
 
     const updatedTranslationData = processTranslatedFile(
       changedTranslationFile
@@ -54,13 +58,18 @@ export const updateTranslationFileOnCommit = async ({
       return;
     }
 
+    console.log("generate open ai assistant content");
+
     const assistantContent = generateOpenAiAssistantContent({
       updatedTranslationData,
       languagesList: otherLanguage,
     });
 
+    console.log("generate open ai system content");
+
     const systemContent = generateOpenAiSystemContent();
 
+    console.log("open ai chat completion");
     const chatCompletion = await openai.chat.completions.create({
       messages: [
         {
@@ -75,18 +84,20 @@ export const updateTranslationFileOnCommit = async ({
       model: "gpt-4",
     });
 
+    console.log("update response from open ai");
     const respondContent = chatCompletion.choices[0].message.content;
-    console.log("🚀 ~ file: index.ts:81 ~ respondContent:", respondContent);
 
     if (!respondContent) {
       console.log("OpenAI dit not return the expected content");
       return;
     }
 
+    console.log("Parse respond content");
     const responds = JSON.parse(
       Buffer.from(respondContent, "utf-8").toString("utf-8")
     );
 
+    console.log("update other language");
     updateOtherLanguage({
       otherLanguage,
       responds,

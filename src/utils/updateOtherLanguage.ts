@@ -11,6 +11,7 @@ export const updateOtherLanguage = ({
   translationDirectory: string;
 }) => {
   otherLanguage.forEach((lang) => {
+    console.log(`Updating ${lang} translation file...`);
     const filePath = path.join(translationDirectory, `${lang}.json`);
 
     const existingTranslations = fs.existsSync(filePath)
