@@ -2,12 +2,12 @@
   "appContext": "This is a example for the app testing OpenAI to translate and update translation files",
   "screen": {
     "welcomeScreen": {
-      "context": "This screen is the first screen of the app to welcome the user",
-      "title": "Welcome to the test app",
-      "description": "This is a description for the welcome screen of the test app"
+      "context": "This screen is the screen of the app to welcome the user",
+      "title": "Welcome to the app",
+      "description": "This is a description for the welcome screen of the app"
     },
     "mainScreen": {
-      "context": "This screen is the main screen of the app",
+      "context": "This screen is the main screen of the test app",
       "title": "Main screen of the app",
       "description": "This is a description for the main screen to test the translation of the app in different languages"
     }
