@@ -28,7 +28,7 @@ export const compareAndCaptureUpdates = ({
     // We already handled appContext, skip to the next iteration
     if (primaryKey === "appContext") continue;
 
-    if (typeof primaryValue !== "object") {
+    if (typeof primaryValue !== "object" && primaryKey !== "context") {
       throw new Error(
         `🚨 ${primaryKey} is not an object. Please check your translation file.`
       );
@@ -40,7 +40,7 @@ export const compareAndCaptureUpdates = ({
         (typeof secondaryValue !== "object" && secondaryKey !== "context")
       ) {
         throw new Error(
-          `🚨 ${secondaryKey} is not an object. Please check your translation file.`
+          `🚨secondaryKey: ${secondaryKey} is not an object. Please check your translation file.`
         );
       }
 
