@@ -1,7 +1,7 @@
 {
   "screen": {
     "welcomeScreen": {
-      "title": "",
+      "title": "Welcome to the package to update your translation files on the fly",
       "description": ""
     },
     "mainScreen": {
