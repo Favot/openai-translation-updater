@@ -34,7 +34,6 @@ export const updateTranslationFileOnCommit = async ({
     });
 
     const changedTranslationFile = await getChangedTranslationFile({
-      pathToDefaultLanguage: translationDirectory,
       defaultLanguage,
     });
 
@@ -58,7 +57,7 @@ export const updateTranslationFileOnCommit = async ({
 
     const assistantContent = generateOpenAiAssistantContent({
       updatedTranslationData,
-      languagesList: LANGUAGES,
+      languagesList: otherLanguage,
     });
 
     const systemContent = generateOpenAiSystemContent();
@@ -78,6 +77,7 @@ export const updateTranslationFileOnCommit = async ({
     });
 
     const respondContent = chatCompletion.choices[0].message.content;
+    console.log("🚀 ~ file: index.ts:81 ~ respondContent:", respondContent);
 
     if (!respondContent) {
       console.log("OpenAI dit not return the expected content");
@@ -87,6 +87,8 @@ export const updateTranslationFileOnCommit = async ({
     const responds = JSON.parse(
       Buffer.from(respondContent, "utf-8").toString("utf-8")
     );
+    console.log("🚀 ~ file: index.ts:91 ~ responds:", responds);
+    console.log("🚀 ~ file: index.ts:92 ~ responds:", typeof responds);
 
     updateOtherLanguage({
       otherLanguage,
