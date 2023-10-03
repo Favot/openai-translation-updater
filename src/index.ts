@@ -103,10 +103,26 @@ export const updateTranslationFileOnCommit = async ({
         Buffer.from(respondContent, "utf-8").toString("utf-8")
       );
 
+      const isRespondsValid = getIsRespondsValid(responds, otherLanguage);
+
+      if (!isRespondsValid) {
+        console.log(
+          "OpenAI did not return the expected content, the content returned was :",
+          responds
+        );
+
+        return;
+      }
+
+      const updatedRespondContentWithListOfKeys = addListOfKeysToRespondContent(
+        updatedItem.listOfKeys,
+        responds
+      );
+
       console.log("update other language");
       updateOtherLanguage({
         otherLanguage,
-        responds,
+        responds: updatedRespondContentWithListOfKeys,
         translationDirectory: translationDirectory,
       });
     });
@@ -114,4 +130,51 @@ export const updateTranslationFileOnCommit = async ({
     console.log(error);
     return;
   }
+};
+
+type RespondItem = {
+  updatedTranslation: string;
+  listOfKeys?: string[];
+};
+
+type Responds = {
+  [lang: string]: RespondItem[];
+};
+
+const addListOfKeysToRespondContent = (
+  listOfKeys: string[],
+  responds: Responds
+): Responds => {
+  // Iterate through each language in the responds object
+  Object.keys(responds).forEach((lang) => {
+    // Iterate through each item in the array for this language
+    responds[lang].forEach((item) => {
+      // Add the listOfKeys property to each item
+      item.listOfKeys = listOfKeys;
+    });
+  });
+
+  // Return the updated responds object
+  return responds;
+};
+
+const getIsRespondsValid = (responds: any, isoCodes?: string[]): boolean => {
+  // If isoCodes are provided, check if all keys in responds are valid isoCodes
+  if (
+    isoCodes &&
+    !Object.keys(responds).every((lang) => isoCodes.includes(lang))
+  ) {
+    return false;
+  }
+
+  // Check if every value in responds is an array of objects with a string property 'updatedTranslation'
+  return Object.values(responds).every(
+    (items) =>
+      Array.isArray(items) &&
+      items.every(
+        (item) =>
+          typeof item === "object" &&
+          typeof item.updatedTranslation === "string"
+      )
+  );
 };

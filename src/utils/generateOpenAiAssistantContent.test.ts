@@ -7,10 +7,7 @@ describe("generateOpenAiAssistantContent", () => {
     const mockUpdatedTranslationData = {
       appContext: "Some App Context",
       updatedItems: {
-        primaryKey: "screen1",
-        secondaryKey: "welcome",
         context: "greeting",
-        translationKey: "title",
         updatedTranslation: "Welcome!",
       },
     };

@@ -24,9 +24,7 @@ describe("updateOtherLanguage", () => {
     const responds = {
       en: [
         {
-          primaryKey: "screen",
-          secondaryKey: "description",
-          translationKey: "text",
+          listOfKeys: ["screen", "title"],
           updatedTranslation: "Welcome to the app",
         },
       ],
@@ -39,8 +37,6 @@ describe("updateOtherLanguage", () => {
       fs.readFileSync(path.join(translationDirectory, "en.json"), "utf-8")
     );
 
-    expect(updatedFileContent.screen.description.text).toBe(
-      "Welcome to the app"
-    );
+    expect(updatedFileContent.screen.title).toBe("Welcome to the app");
   });
 });

@@ -1,5 +1,6 @@
 import {
-  TranslationContent,
+  NestedObject,
+  TranslationSegment,
   UpdatedTranslationData,
   UpdatedTranslationItem,
 } from "../type";
@@ -8,77 +9,50 @@ export const compareAndCaptureUpdates = ({
   stagedContent,
   headContent,
 }: {
-  stagedContent: TranslationContent;
-  headContent: TranslationContent;
+  stagedContent: TranslationSegment;
+  headContent: TranslationSegment;
 }): UpdatedTranslationData => {
-  const updatedTranslationData: UpdatedTranslationData = {
-    appContext: null,
-    updatedItems: [],
-  };
+  const updatedItems: UpdatedTranslationItem[] = [];
 
-  // Handle appContext outside the loop since it's a special case.
-  if (
-    stagedContent.appContext &&
-    stagedContent.appContext !== headContent.appContext
-  ) {
-    updatedTranslationData.appContext = stagedContent.appContext;
+  function getKeyContext(
+    obj: NestedObject,
+    keys: string[]
+  ): string | undefined {
+    if (keys.length === 0) return obj.context;
+    const key = keys[0];
+    if (typeof obj[key] === "object") {
+      return getKeyContext(obj[key] as NestedObject, keys.slice(1));
+    }
+    return undefined;
   }
 
-  for (const [primaryKey, primaryValue] of Object.entries(stagedContent)) {
-    // We already handled appContext, skip to the next iteration
-    if (primaryKey === "appContext") continue;
-
-    if (typeof primaryValue !== "object" && primaryKey !== "context") {
-      throw new Error(
-        `🚨 ${primaryKey} is not an object. Please check your translation file.`
-      );
-    }
-
-    for (const [secondaryKey, secondaryValue] of Object.entries(primaryValue)) {
-      if (
-        !secondaryValue ||
-        (typeof secondaryValue !== "object" && secondaryKey !== "context")
-      ) {
-        throw new Error(
-          `🚨secondaryKey: ${secondaryKey} is not an object. Please check your translation file.`
-        );
-      }
-
-      for (const [translationKey, updatedTranslation] of Object.entries(
-        secondaryValue
-      )) {
-        const isTranslationAbsentInHeadContent =
-          !headContent[primaryKey]?.[secondaryKey]?.hasOwnProperty(
-            translationKey
-          );
-        const isTranslationDifferentFromHeadContent =
-          headContent[primaryKey]?.[secondaryKey]?.[translationKey] !==
-          updatedTranslation;
-
-        if (
-          isTranslationAbsentInHeadContent ||
-          isTranslationDifferentFromHeadContent
-        ) {
-          const context = headContent[primaryKey]?.[secondaryKey]?.context;
-
-          if (typeof context !== "string" && secondaryKey !== "context") {
-            console.log(
-              `🚨 There is not context implemented for the key: ${secondaryKey}, make sure it's not required.`
-            );
-          }
-
-          const updatedItem: UpdatedTranslationItem = {
-            primaryKey,
-            secondaryKey,
-            context: context || "",
-            translationKey: translationKey,
-            updatedTranslation: updatedTranslation as string,
-          };
-          updatedTranslationData.updatedItems.push(updatedItem);
+  function traverse(
+    staged: NestedObject | string,
+    head: NestedObject | string,
+    keys: string[] = []
+  ) {
+    if (typeof staged === "object" && typeof head === "object") {
+      for (const key in staged) {
+        if (Object.prototype.hasOwnProperty.call(staged, key)) {
+          traverse(staged[key], head[key], keys.concat(key));
         }
       }
+    } else if (
+      typeof staged === "string" &&
+      (typeof head !== "string" || staged !== head)
+    ) {
+      updatedItems.push({
+        listOfKeys: keys,
+        itemContext: getKeyContext(stagedContent, keys.slice(0, -1)),
+        updatedTranslation: staged,
+      });
     }
   }
 
-  return updatedTranslationData;
+  traverse(stagedContent, headContent);
+
+  return {
+    appContext: stagedContent.appContext || null,
+    updatedItems,
+  };
 };

@@ -1,4 +1,4 @@
-import { UpdatedTranslationItem } from "../type";
+import { UpdatedTranslationItemForOpenAi } from "../type";
 import { updatedItemToString } from "./updatedItemsToString";
 
 export const generateOpenAiAssistantContent = ({
@@ -6,7 +6,7 @@ export const generateOpenAiAssistantContent = ({
   appContext,
   languagesList,
 }: {
-  updatedTranslationData: UpdatedTranslationItem;
+  updatedTranslationData: UpdatedTranslationItemForOpenAi;
   appContext: string | null;
   languagesList: string[];
 }) => {

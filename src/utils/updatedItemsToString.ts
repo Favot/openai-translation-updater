@@ -1,13 +1,10 @@
-import { UpdatedTranslationItem } from "../type";
+import { UpdatedTranslationItemForOpenAi } from "../type";
 
 export const updatedItemToString = (
-  updatedItems: UpdatedTranslationItem
+  updatedItems: UpdatedTranslationItemForOpenAi
 ): string => {
   return (
-    `primaryKey: ${updatedItems.primaryKey}\n` +
-    `secondaryKey: ${updatedItems.secondaryKey}\n` +
-    `context: ${updatedItems.context}\n` +
-    `translatedItemKey: ${updatedItems.translationKey}\n` +
+    `context: ${updatedItems.itemContext}\n` +
     `updatedTranslation: ${updatedItems.updatedTranslation}\n`
   );
 };

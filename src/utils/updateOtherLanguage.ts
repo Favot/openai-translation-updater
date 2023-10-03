@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { UpdatedTranslationItem } from "../type";
+
 export const updateOtherLanguage = ({
   otherLanguage,
   responds,
@@ -19,33 +20,24 @@ export const updateOtherLanguage = ({
       : {};
 
     responds[lang].forEach((item: UpdatedTranslationItem) => {
-      const primaryKey = item.primaryKey;
-      const secondaryKey = item.secondaryKey;
-      const context = item.context;
-      const translatedItemKey = item.translationKey;
-      const updatedTranslation = item.updatedTranslation;
+      const { itemContext, updatedTranslation, listOfKeys } = item;
 
-      if (!existingTranslations[primaryKey]) {
-        existingTranslations[primaryKey] = {};
+      function updateOrCreate(obj: any, keys: string[], index: number) {
+        const key = keys[index];
+
+        if (key === "context") return;
+
+        if (index === keys.length - 1) {
+          obj[key] = updatedTranslation;
+        } else {
+          if (!obj[key] || typeof obj[key] !== "object") {
+            obj[key] = {};
+          }
+          updateOrCreate(obj[key], keys, index + 1);
+        }
       }
 
-      if (!existingTranslations[primaryKey][secondaryKey]) {
-        if (
-          context ||
-          existingTranslations[primaryKey][secondaryKey] === "context"
-        )
-          return;
-        existingTranslations[primaryKey][secondaryKey] = {};
-      }
-
-      if (
-        existingTranslations[primaryKey][secondaryKey][translatedItemKey] ===
-        "context"
-      )
-        return;
-
-      existingTranslations[primaryKey][secondaryKey][translatedItemKey] =
-        updatedTranslation;
+      updateOrCreate(existingTranslations, listOfKeys, 0);
     });
 
     fs.writeFileSync(

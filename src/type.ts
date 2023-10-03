@@ -1,8 +1,16 @@
 export type UpdatedTranslationItem = {
-  primaryKey: string;
-  secondaryKey: string;
-  context: string;
-  translationKey: string;
+  listOfKeys: string[];
+  itemContext?: string;
+  updatedTranslation: string;
+};
+
+export type UpdatedTranslationItemFromOpenAi = {
+  listOfKeys: string[];
+  updatedTranslation: string;
+};
+
+export type UpdatedTranslationItemForOpenAi = {
+  itemContext?: string;
   updatedTranslation: string;
 };
 
@@ -11,9 +19,24 @@ export type UpdatedTranslationData = {
   updatedItems: UpdatedTranslationItem[];
 };
 
-export type TranslationContent = {
+type BaseNestedObject = {
+  [key: string]: string | NestedObject;
+};
+
+export type NestedObject = BaseNestedObject & {
+  context?: string;
+};
+
+type BaseTranslationSegment = {
+  [key: string]: string | NestedObject;
+};
+
+export type TranslationSegment = BaseTranslationSegment & {
   appContext?: string;
-  [context: string]: any;
+};
+
+export type TranslationFile = {
+  [segment: string]: TranslationSegment;
 };
 
 export type ScreenValue = {
