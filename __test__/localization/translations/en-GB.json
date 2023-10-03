@@ -44,5 +44,10 @@
       "notFound": "",
       "notAuthorized": ""
     }
+  },
+  "successMessages": {
+    "context": "This is a context for the success messages of the app",
+    "Validation": "",
+    "Cancel": ""
   }
 }
