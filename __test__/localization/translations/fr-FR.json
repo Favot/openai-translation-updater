@@ -1,0 +1,31 @@
+{
+  "screen": {
+    "welcomeScreen": {
+      "title": "Bienvenue dans l'application",
+      "description": "This is a description for the welcome screen of the app"
+    },
+    "mainScreen": {
+      "title": "Écran principal de l'application",
+      "description": "Ceci est une description pour l'écran principal pour tester la traduction de l'application dans différentes langues"
+    }
+  },
+  "component": {
+    "button": {
+      "title": "ouvrir le modal unique de l'application de test",
+      "description": "Vous pouvez ouvrir le modal en appuyant sur le bouton"
+    },
+    "input": {
+      "title": "Nom de famille",
+      "description": "Tapez votre nom de famille ici"
+    }
+  },
+  "common": {
+    "text": {
+      "cancel": "Bouton Annuler",
+      "validate": "Valider le bouton"
+    },
+    "unit": {
+      "currency": "Livre sterling"
+    }
+  }
+}

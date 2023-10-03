@@ -1,0 +1,31 @@
+{
+  "screen": {
+    "welcomeScreen": {
+      "title": "欢迎来到应用",
+      "description": "This is a description for the welcome screen of the app"
+    },
+    "mainScreen": {
+      "title": "应用程序的主屏幕",
+      "description": "这是主屏幕的描述，用于测试应用程序在不同语言中的翻译"
+    }
+  },
+  "component": {
+    "button": {
+      "title": "打开测试应用的唯一模态框",
+      "description": "您可以通过按按钮来打开模态"
+    },
+    "input": {
+      "title": "姓",
+      "description": "在此处输入您的姓氏"
+    }
+  },
+  "common": {
+    "text": {
+      "cancel": "取消按钮",
+      "validate": "验证按钮"
+    },
+    "unit": {
+      "currency": "英镑"
+    }
+  }
+}

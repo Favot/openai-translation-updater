@@ -1,0 +1,31 @@
+{
+  "screen": {
+    "welcomeScreen": {
+      "title": "Welcome to the app",
+      "description": "This is a description for the welcome screen of the app"
+    },
+    "mainScreen": {
+      "title": "Main screen of the app",
+      "description": "This is a description for the main screen to test the translation of the app in different languages"
+    }
+  },
+  "component": {
+    "button": {
+      "title": "open the unique modal of the test app",
+      "description": "You can open the modal by pressing on the button"
+    },
+    "input": {
+      "title": "Last name",
+      "description": "Type your last name here"
+    }
+  },
+  "common": {
+    "text": {
+      "cancel": "Cancel Button",
+      "validate": "Validate Button"
+    },
+    "unit": {
+      "currency": "Pound"
+    }
+  }
+}
