@@ -10,7 +10,7 @@ node_modules/
 **/*.test.ts
 jest.config.js
 coverage/
-test/
+__test__/
 
 # Ignore development documentation
 README-dev.md
