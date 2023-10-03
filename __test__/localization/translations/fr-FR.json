@@ -1,31 +1,41 @@
 {
-  "screen": {
-    "welcomeScreen": {
-      "title": "Bienvenue dans l'application",
-      "description": "This is a description for the welcome screen of the app"
-    },
-    "mainScreen": {
-      "title": "Écran principal de l'application",
-      "description": "Ceci est une description pour l'écran principal pour tester la traduction de l'application dans différentes langues"
-    }
-  },
-  "component": {
-    "button": {
-      "title": "ouvrir le modal unique de l'application de test",
-      "description": "Vous pouvez ouvrir le modal en appuyant sur le bouton"
-    },
-    "input": {
-      "title": "Nom de famille",
-      "description": "Tapez votre nom de famille ici"
+  "error": {
+    "message": {
+      "notAuthorized": "Non autorisé",
+      "notFound": "Pas trouvé"
     }
   },
   "common": {
     "text": {
       "cancel": "Bouton Annuler",
-      "validate": "Valider le bouton"
+      "validate": "Bouton Valider"
     },
     "unit": {
-      "currency": "Livre sterling"
+      "currency": "Livre Sterling"
     }
+  },
+  "screen": {
+    "mainScreen": {
+      "title": "Écran principal de l'application",
+      "description": "Ceci est une description pour l’écran principal pour tester la traduction de l'application dans différentes langues"
+    },
+    "welcomeScreen": {
+      "title": "Bienvenue dans l'application",
+      "description": "Ceci est une description de l'écran d'accueil de l'application"
+    }
+  },
+  "component": {
+    "input": {
+      "title": "Nom de famille",
+      "description": "Tapez votre nom de famille ici"
+    },
+    "button": {
+      "title": "Ouvrez la fenêtre modale unique de l'application de test",
+      "description": "vous pouvez ouvrir la pop-up en appuyant sur le bouton"
+    }
+  },
+  "successMessages": {
+    "Validation": "Le message a été validé",
+    "Cancel": "Le message a été annulé avec succès"
   }
 }

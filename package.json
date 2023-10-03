@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "types": "src/index.d.ts",
   "scripts": {
-    "test:unit": "jest --coverage",
-    "test:updateFiles": "ts-node ./test/index.ts",
+    "test:unit": "jest --watch --coverage",
+    "test:updateFiles": "ts-node ./__test__/index.ts",
     "build": "tsc",
     "publish": "npm run build && npm publish"
   },

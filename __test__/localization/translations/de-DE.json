@@ -1,31 +1,41 @@
 {
-  "screen": {
-    "welcomeScreen": {
-      "title": "Willkommen in der App",
-      "description": "This is a description for the welcome screen of the app"
-    },
-    "mainScreen": {
-      "title": "Hauptbildschirm der App",
-      "description": "Dies ist eine Beschreibung für den Hauptbildschirm, um die Übersetzung der App in verschiedenen Sprachen zu testen"
-    }
-  },
-  "component": {
-    "button": {
-      "title": "öffnen Sie das einzigartige Modal der Test-App",
-      "description": "Sie können das Modal durch Drücken auf die Schaltfläche öffnen"
-    },
-    "input": {
-      "title": "Familienname",
-      "description": "Geben Sie hier Ihren Nachnamen ein"
+  "error": {
+    "message": {
+      "notAuthorized": "Nicht autorisiert",
+      "notFound": "Nicht gefunden"
     }
   },
   "common": {
     "text": {
-      "cancel": "Abbrechen Schaltfläche",
-      "validate": "Taste validieren"
+      "cancel": "Abbrechen-Taste",
+      "validate": "Validieren Schaltfläche"
     },
     "unit": {
       "currency": "Pfund Sterling"
     }
+  },
+  "screen": {
+    "mainScreen": {
+      "title": "Hauptbildschirm der App",
+      "description": "Dies ist eine Beschreibung für den Hauptbildschirm, um die Übersetzung der App in verschiedenen Sprachen zu testen"
+    },
+    "welcomeScreen": {
+      "title": "Willkommen bei der App",
+      "description": "Dies ist eine Beschreibung für den Willkommensbildschirm der App"
+    }
+  },
+  "component": {
+    "input": {
+      "title": "Familienname",
+      "description": "Geben Sie hier Ihren Nachnamen ein"
+    },
+    "button": {
+      "title": "Öffnen Sie das einzigartige Modal der Test-App",
+      "description": "Sie können das Pop-up öffnen, indem Sie auf die Schaltfläche drücken"
+    }
+  },
+  "successMessages": {
+    "Validation": "Die Nachricht wurde validiert",
+    "Cancel": "Die Nachricht wurde erfolgreich abgebrochen"
   }
 }

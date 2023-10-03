@@ -36,5 +36,18 @@
       "context": "Localize the unit according to the language of the file",
       "currency": ""
     }
+  },
+  "error": {
+    "context": "This is a context for the error of the app",
+    "message": {
+      "context": "This is a message to test the translation of the app",
+      "notFound": "",
+      "notAuthorized": ""
+    }
+  },
+  "successMessages": {
+    "context": "This is a context for the success messages of the app",
+    "Validation": "",
+    "Cancel": ""
   }
 }

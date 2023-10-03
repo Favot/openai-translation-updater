@@ -1,22 +1,8 @@
 {
-  "screen": {
-    "welcomeScreen": {
-      "title": "欢迎来到应用",
-      "description": "This is a description for the welcome screen of the app"
-    },
-    "mainScreen": {
-      "title": "应用程序的主屏幕",
-      "description": "这是主屏幕的描述，用于测试应用程序在不同语言中的翻译"
-    }
-  },
-  "component": {
-    "button": {
-      "title": "打开测试应用的唯一模态框",
-      "description": "您可以通过按按钮来打开模态"
-    },
-    "input": {
-      "title": "姓",
-      "description": "在此处输入您的姓氏"
+  "error": {
+    "message": {
+      "notAuthorized": "未授权",
+      "notFound": "未找到"
     }
   },
   "common": {
@@ -27,5 +13,29 @@
     "unit": {
       "currency": "英镑"
     }
+  },
+  "screen": {
+    "mainScreen": {
+      "title": "应用程序的主屏幕",
+      "description": "这是为主屏幕提供的描述，用于测试应用程序在不同语言中的翻译"
+    },
+    "welcomeScreen": {
+      "title": "欢迎来到应用程序",
+      "description": "这是应用程序的欢迎屏幕的描述"
+    }
+  },
+  "component": {
+    "input": {
+      "title": "姓",
+      "description": "在这里输入您的姓氏"
+    },
+    "button": {
+      "title": "打开测试应用的唯一模态窗口",
+      "description": "您可以按按钮打开弹出窗口"
+    }
+  },
+  "successMessages": {
+    "Validation": "消息已经过验证",
+    "Cancel": "消息已成功取消"
   }
 }
