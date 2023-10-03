@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1696234505382" clover="3.2.0">
-  <project timestamp="1696234505382" name="All files">
-    <metrics statements="67" coveredstatements="65" conditionals="47" coveredconditionals="36" methods="10" coveredmethods="10" elements="124" coveredelements="111" complexity="0" loc="67" ncloc="67" packages="1" files="7" classes="7"/>
+<coverage generated="1696333153397" clover="3.2.0">
+  <project timestamp="1696333153397" name="All files">
+    <metrics statements="50" coveredstatements="49" conditionals="48" coveredconditionals="39" methods="6" coveredmethods="6" elements="104" coveredelements="94" complexity="0" loc="50" ncloc="50" packages="1" files="6" classes="6"/>
     <file name="compareAndCaptureUpdates.ts" path="/Users/smt/development/package/openai-translation-updater/src/utils/compareAndCaptureUpdates.ts">
-      <metrics statements="21" coveredstatements="20" conditionals="38" coveredconditionals="29" methods="1" coveredmethods="1"/>
+      <metrics statements="21" coveredstatements="20" conditionals="43" coveredconditionals="34" methods="1" coveredmethods="1"/>
       <line num="7" count="1" type="stmt"/>
       <line num="14" count="4" type="stmt"/>
       <line num="20" count="4" type="cond" truecount="0" falsecount="1"/>
       <line num="24" count="0" type="stmt"/>
       <line num="27" count="4" type="stmt"/>
       <line num="29" count="4" type="cond" truecount="0" falsecount="1"/>
-      <line num="31" count="4" type="cond" truecount="1" falsecount="0"/>
+      <line num="31" count="4" type="cond" truecount="3" falsecount="0"/>
       <line num="32" count="1" type="stmt"/>
       <line num="37" count="3" type="stmt"/>
-      <line num="38" count="3" type="cond" truecount="3" falsecount="0"/>
-      <line num="39" count="1" type="stmt"/>
-      <line num="44" count="2" type="stmt"/>
-      <line num="48" count="2" type="cond" truecount="6" falsecount="2"/>
-      <line num="52" count="2" type="cond" truecount="6" falsecount="2"/>
-      <line num="55" count="2" type="cond" truecount="1" falsecount="0"/>
-      <line num="59" count="1" type="cond" truecount="6" falsecount="2"/>
-      <line num="61" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="62" count="1" type="stmt"/>
-      <line num="67" count="1" type="stmt"/>
-      <line num="74" count="1" type="stmt"/>
-      <line num="80" count="2" type="stmt"/>
+      <line num="38" count="3" type="cond" truecount="1" falsecount="0"/>
+      <line num="42" count="1" type="stmt"/>
+      <line num="47" count="2" type="stmt"/>
+      <line num="51" count="2" type="cond" truecount="6" falsecount="2"/>
+      <line num="55" count="2" type="cond" truecount="6" falsecount="2"/>
+      <line num="58" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="62" count="1" type="cond" truecount="6" falsecount="2"/>
+      <line num="64" count="1" type="cond" truecount="3" falsecount="0"/>
+      <line num="65" count="1" type="stmt"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="77" count="1" type="stmt"/>
+      <line num="83" count="2" type="stmt"/>
     </file>
     <file name="executeCommand.ts" path="/Users/smt/development/package/openai-translation-updater/src/utils/executeCommand.ts">
       <metrics statements="7" coveredstatements="7" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -40,21 +40,22 @@
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
     </file>
     <file name="getChangedTranslationFile.ts" path="/Users/smt/development/package/openai-translation-updater/src/utils/getChangedTranslationFile.ts">
-      <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
-      <line num="8" count="3" type="stmt"/>
-      <line num="9" count="3" type="stmt"/>
-      <line num="11" count="3" type="cond" truecount="1" falsecount="0"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="21" count="2" type="cond" truecount="1" falsecount="0"/>
-      <line num="22" count="1" type="stmt"/>
-      <line num="29" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="11" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="14" count="3" type="cond" truecount="1" falsecount="0"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="20" count="2" type="cond" truecount="1" falsecount="0"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
     </file>
     <file name="getFileContent.ts" path="/Users/smt/development/package/openai-translation-updater/src/utils/getFileContent.ts">
       <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -64,31 +65,10 @@
       <line num="5" count="3" type="stmt"/>
       <line num="6" count="3" type="cond" truecount="2" falsecount="0"/>
     </file>
-    <file name="updateOtherLanguage.ts" path="/Users/smt/development/package/openai-translation-updater/src/utils/updateOtherLanguage.ts">
-      <metrics statements="17" coveredstatements="16" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="22" count="1" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="24" count="1" type="stmt"/>
-      <line num="26" count="1" type="cond" truecount="0" falsecount="1"/>
-      <line num="27" count="0" type="stmt"/>
-      <line num="30" count="1" type="cond" truecount="1" falsecount="0"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="34" count="1" type="stmt"/>
-      <line num="38" count="1" type="stmt"/>
-    </file>
     <file name="updatedItemsToString.ts" path="/Users/smt/development/package/openai-translation-updater/src/utils/updatedItemsToString.ts">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="3" count="2" type="stmt"/>
-      <line num="6" count="5" type="stmt"/>
-      <line num="8" count="7" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
     </file>
   </project>
 </coverage>
