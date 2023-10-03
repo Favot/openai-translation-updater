@@ -1,17 +1,13 @@
 import { UpdatedTranslationItem } from "../type";
 
-export const updatedItemsToString = (
-  updatedItems: UpdatedTranslationItem[]
+export const updatedItemToString = (
+  updatedItems: UpdatedTranslationItem
 ): string => {
-  return updatedItems
-    .map((item) => {
-      return (
-        `primaryKey: ${item.primaryKey}\n` +
-        `secondaryKey: ${item.secondaryKey}\n` +
-        `context: ${item.context}\n` +
-        `translatedItemKey: ${item.translationKey}\n` +
-        `updatedTranslation: ${item.updatedTranslation}\n`
-      );
-    })
-    .join("\n");
+  return (
+    `primaryKey: ${updatedItems.primaryKey}\n` +
+    `secondaryKey: ${updatedItems.secondaryKey}\n` +
+    `context: ${updatedItems.context}\n` +
+    `translatedItemKey: ${updatedItems.translationKey}\n` +
+    `updatedTranslation: ${updatedItems.updatedTranslation}\n`
+  );
 };

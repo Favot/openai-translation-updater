@@ -21,6 +21,7 @@ export const updateOtherLanguage = ({
     responds[lang].forEach((item: UpdatedTranslationItem) => {
       const primaryKey = item.primaryKey;
       const secondaryKey = item.secondaryKey;
+      const context = item.context;
       const translatedItemKey = item.translationKey;
       const updatedTranslation = item.updatedTranslation;
 
@@ -29,8 +30,19 @@ export const updateOtherLanguage = ({
       }
 
       if (!existingTranslations[primaryKey][secondaryKey]) {
+        if (
+          context ||
+          existingTranslations[primaryKey][secondaryKey] === "context"
+        )
+          return;
         existingTranslations[primaryKey][secondaryKey] = {};
       }
+
+      if (
+        existingTranslations[primaryKey][secondaryKey][translatedItemKey] ===
+        "context"
+      )
+        return;
 
       existingTranslations[primaryKey][secondaryKey][translatedItemKey] =
         updatedTranslation;

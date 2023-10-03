@@ -4,12 +4,14 @@ export const generateOpenAiSystemContent = () => {
        language ISO 639-1 Code:[{
          primaryKey: do not translate this key just return the screenName value
          secondaryKey: do not translate this key just return the screenName value
+         context: do not translate this key just return the context value
          translationKey: do not translate this key just return the translationKey value 
          updatedTranslation :  translation first updatedTranslation key
        },
        {
          primaryKey: do not translate this key just return the screenName value
          secondaryKey: do not translate this key just return the screenName value
+         context: do not translate this key just return the context value
          translationKey: do not translate this key just return the translationKey value 
          updatedTranslation : translation seconde updatedTranslation key
        }

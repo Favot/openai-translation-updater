@@ -1,27 +1,18 @@
 import { generateOpenAiAssistantContent } from "./generateOpenAiAssistantContent";
-import { updatedItemsToString } from "./updatedItemsToString";
+import { updatedItemToString } from "./updatedItemsToString";
 
 describe("generateOpenAiAssistantContent", () => {
   it("should generate the correct content with the provided languages and data", () => {
     const mockLanguagesList = ["en", "es", "fr"];
     const mockUpdatedTranslationData = {
       appContext: "Some App Context",
-      updatedItems: [
-        {
-          primaryKey: "screen1",
-          secondaryKey: "welcome",
-          context: "greeting",
-          translationKey: "title",
-          updatedTranslation: "Welcome!",
-        },
-        {
-          primaryKey: "screen2",
-          secondaryKey: "main",
-          context: "info",
-          translationKey: "description",
-          updatedTranslation: "Main screen",
-        },
-      ],
+      updatedItems: {
+        primaryKey: "screen1",
+        secondaryKey: "welcome",
+        context: "greeting",
+        translationKey: "title",
+        updatedTranslation: "Welcome!",
+      },
     };
 
     const expectedResult = `
@@ -37,11 +28,12 @@ describe("generateOpenAiAssistantContent", () => {
   
     data :
       appContext = ${mockUpdatedTranslationData.appContext}
-      appKey = ${updatedItemsToString(mockUpdatedTranslationData.updatedItems)}
+      appKey = ${updatedItemToString(mockUpdatedTranslationData.updatedItems)}
   `;
 
     const result = generateOpenAiAssistantContent({
-      updatedTranslationData: mockUpdatedTranslationData,
+      updatedTranslationData: mockUpdatedTranslationData.updatedItems,
+      appContext: mockUpdatedTranslationData.appContext,
       languagesList: mockLanguagesList,
     });
 

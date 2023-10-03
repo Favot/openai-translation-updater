@@ -60,48 +60,55 @@ export const updateTranslationFileOnCommit = async ({
 
     console.log("generate open ai assistant content");
 
-    const assistantContent = generateOpenAiAssistantContent({
-      updatedTranslationData,
-      languagesList: otherLanguage,
-    });
-
     console.log("generate open ai system content");
 
-    const systemContent = generateOpenAiSystemContent();
-
     console.log("open ai chat completion");
-    const chatCompletion = await openai.chat.completions.create({
-      messages: [
-        {
-          role: "system",
-          content: systemContent,
-        },
-        {
-          role: "assistant",
-          content: assistantContent,
-        },
-      ],
-      model: "gpt-4",
-    });
 
-    console.log("update response from open ai");
-    const respondContent = chatCompletion.choices[0].message.content;
+    const appContext = updatedTranslationData.appContext;
 
-    if (!respondContent) {
-      console.log("OpenAI dit not return the expected content");
-      return;
-    }
+    updatedTranslationData.updatedItems.forEach(async (updatedItem) => {
+      const assistantContent = generateOpenAiAssistantContent({
+        updatedTranslationData: updatedItem,
+        appContext,
+        languagesList: otherLanguage,
+      });
 
-    console.log("Parse respond content");
-    const responds = JSON.parse(
-      Buffer.from(respondContent, "utf-8").toString("utf-8")
-    );
+      const systemContent = generateOpenAiSystemContent();
 
-    console.log("update other language");
-    updateOtherLanguage({
-      otherLanguage,
-      responds,
-      translationDirectory: translationDirectory,
+      const chatCompletion = await openai.chat.completions.create({
+        messages: [
+          {
+            role: "system",
+            content: systemContent,
+          },
+          {
+            role: "assistant",
+            content: assistantContent,
+          },
+        ],
+        model: "gpt-4",
+      });
+
+      console.log("update response from open ai");
+      const respondContent = chatCompletion.choices[0].message.content;
+      console.log("🚀 ~ file: index.ts:89 ~ respondContent:", respondContent);
+
+      if (!respondContent) {
+        console.log("OpenAI dit not return the expected content");
+        return;
+      }
+
+      console.log("Parse respond content");
+      const responds = JSON.parse(
+        Buffer.from(respondContent, "utf-8").toString("utf-8")
+      );
+
+      console.log("update other language");
+      updateOtherLanguage({
+        otherLanguage,
+        responds,
+        translationDirectory: translationDirectory,
+      });
     });
   } catch (error) {
     console.log(error);

@@ -1,11 +1,13 @@
-import { UpdatedTranslationData } from "../type";
-import { updatedItemsToString } from "./updatedItemsToString";
+import { UpdatedTranslationItem } from "../type";
+import { updatedItemToString } from "./updatedItemsToString";
 
 export const generateOpenAiAssistantContent = ({
   updatedTranslationData,
+  appContext,
   languagesList,
 }: {
-  updatedTranslationData: UpdatedTranslationData;
+  updatedTranslationData: UpdatedTranslationItem;
+  appContext: string | null;
   languagesList: string[];
 }) => {
   const content = `
@@ -20,8 +22,8 @@ export const generateOpenAiAssistantContent = ({
         - en : behaviour , en-us: behavior
   
     data :
-      appContext = ${updatedTranslationData.appContext}
-      appKey = ${updatedItemsToString(updatedTranslationData.updatedItems)}
+      appContext = ${appContext}
+      appKey = ${updatedItemToString(updatedTranslationData)}
   `;
 
   return content;

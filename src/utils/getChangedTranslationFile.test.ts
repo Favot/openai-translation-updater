@@ -1,5 +1,8 @@
 import { executeCommand } from "./executeCommand";
-import { getChangedTranslationFile } from "./getChangedTranslationFile";
+import {
+  getChangedTranslationFile,
+  noTranslationUpdatesFound,
+} from "./getChangedTranslationFile";
 
 // Mock the executeCommand module
 jest.mock("./executeCommand");
@@ -10,15 +13,13 @@ describe("getChangedTranslationFile", () => {
     jest.clearAllMocks();
   });
 
-  it("should reject if no translation file updates are found", async () => {
+  it("should skip if no translation file updates are found", async () => {
     // Mock behavior for executeCommand to return null
     (executeCommand as jest.Mock).mockReturnValue(null);
 
     await expect(
       getChangedTranslationFile({ defaultLanguage: "en" })
-    ).rejects.toThrow(
-      "No translation file updates found, make sure you correctly staged the file"
-    );
+    ).resolves.toEqual(noTranslationUpdatesFound);
   });
 
   it("should reject if multiple translation files are updated", async () => {
