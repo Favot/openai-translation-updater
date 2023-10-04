@@ -6,6 +6,26 @@ An npm package that automates the process of updating translation files on every
 
 When working on projects that support multiple languages, keeping track of updated translations can be a challenge. The `Translation Hook Assistant` helps you automate this process by using the power of OpenAI's language model, integrating directly into your Git workflow. Every time you make a commit, the `updateTranslationFileOnCommit` function ensures that your translation files are up-to-date, making internationalization seamless and efficient.
 
+## Enhancing Translations with Context
+
+To achieve more accurate and contextually appropriate translations from OpenAI, you can optionally include appContext and context keys in your translation files. The appContext key can provide general information or context about the application, while the context key can provide context about a specific section or key within the translation file. This additional context can help OpenAI better understand the intended meaning and usage, leading to improved translation quality.
+
+```json
+
+{
+  "appContext": "A finance management app",
+  "screen": {
+    "dashboard": {
+      "context": "Main dashboard displaying financial overview",
+      "balance": "Balance",
+      ...
+    },
+    ...
+  },
+  ...
+}
+```
+
 ## Installation
 
 ```
