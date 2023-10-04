@@ -1,11 +1,12 @@
 {
   "name": "openai-translation-updater",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Automatically update translation files on commit using OpenAI.",
   "main": "dist/index.js",
   "types": "src/index.d.ts",
   "scripts": {
-    "test:unit": "jest --watch --coverage",
+    "test:unit": "jest --watch",
+    "test:unit:coverage": "jest --coverage",
     "test:updateFiles": "ts-node ./__test__/index.ts",
     "build": "tsc",
     "publish": "npm run build && npm publish"
