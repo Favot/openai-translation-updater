@@ -20,7 +20,7 @@ export const updateOtherLanguage = ({
       : {};
 
     responds[lang].forEach((item: UpdatedTranslationItem) => {
-      const { itemContext, updatedTranslation, listOfKeys } = item;
+      const { updatedTranslation, listOfKeys } = item;
 
       function updateOrCreate(obj: any, keys: string[], index: number) {
         const key = keys[index];
