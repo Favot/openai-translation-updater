@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { UpdatedTranslationItem } from "../type";
+import { Responds, UpdatedTranslatedItem } from "..";
 
 export const updateOtherLanguage = ({
   otherLanguage,
@@ -8,18 +8,19 @@ export const updateOtherLanguage = ({
   translationDirectory,
 }: {
   otherLanguage: string[];
-  responds: any;
+  responds: Responds;
   translationDirectory: string;
 }) => {
   otherLanguage.forEach((lang) => {
     console.log(`Updating ${lang} translation file...`);
+
     const filePath = path.join(translationDirectory, `${lang}.json`);
 
     const existingTranslations = fs.existsSync(filePath)
       ? JSON.parse(fs.readFileSync(filePath, "utf-8"))
       : {};
 
-    responds[lang].forEach((item: UpdatedTranslationItem) => {
+    responds[lang].forEach((item: UpdatedTranslatedItem) => {
       const { updatedTranslation, listOfKeys } = item;
 
       function updateOrCreate(obj: any, keys: string[], index: number) {
@@ -28,9 +29,13 @@ export const updateOtherLanguage = ({
         if (key === "context") return;
 
         if (index === keys.length - 1) {
+          console.log(
+            `In the ${lang} file, updating key: "${key}" wit the text : ${updatedTranslation}`
+          );
           obj[key] = updatedTranslation;
         } else {
           if (!obj[key] || typeof obj[key] !== "object") {
+            console.log(`In the ${lang} file, creating new key ${key}`);
             obj[key] = {};
           }
           updateOrCreate(obj[key], keys, index + 1);

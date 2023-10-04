@@ -8,6 +8,20 @@ import {
 } from "./utils";
 import { noTranslationUpdatesFound } from "./utils/getChangedTranslationFile";
 
+export type RespondItem = {
+  updatedTranslation: string;
+  listOfKeys?: string[];
+};
+
+export type UpdatedTranslatedItem = {
+  listOfKeys: string[];
+  updatedTranslation: string;
+};
+
+export type Responds = {
+  [lang: string]: UpdatedTranslatedItem[];
+};
+
 export const updateTranslationFileOnCommit = async ({
   openAiApiKey,
   translationDirectory,
@@ -62,11 +76,13 @@ export const updateTranslationFileOnCommit = async ({
 
     console.log("generate open ai system content");
 
-    console.log("open ai chat completion");
-
     const appContext = updatedTranslationData.appContext;
 
     updatedTranslationData.updatedItems.forEach(async (updatedItem) => {
+      console.log(
+        `Request open ai to translate the text: "${updatedItem.updatedTranslation}"`
+      );
+
       const assistantContent = generateOpenAiAssistantContent({
         updatedTranslationData: updatedItem,
         appContext,
@@ -91,7 +107,6 @@ export const updateTranslationFileOnCommit = async ({
 
       console.log("update response from open ai");
       const respondContent = chatCompletion.choices[0].message.content;
-      console.log("🚀 ~ file: index.ts:89 ~ respondContent:", respondContent);
 
       if (!respondContent) {
         console.log("OpenAI dit not return the expected content");
@@ -130,15 +145,6 @@ export const updateTranslationFileOnCommit = async ({
     console.log(error);
     return;
   }
-};
-
-type RespondItem = {
-  updatedTranslation: string;
-  listOfKeys?: string[];
-};
-
-type Responds = {
-  [lang: string]: RespondItem[];
 };
 
 const addListOfKeysToRespondContent = (
