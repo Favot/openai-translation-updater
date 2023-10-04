@@ -1,7 +1,7 @@
-import { UpdatedTranslationItemForOpenAi } from "../type";
+import { TranslationItemForOpenAi } from "../type";
 
 export const updatedItemToString = (
-  updatedItems: UpdatedTranslationItemForOpenAi
+  updatedItems: TranslationItemForOpenAi
 ): string => {
   return (
     `context: ${updatedItems.itemContext}\n` +

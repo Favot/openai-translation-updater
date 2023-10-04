@@ -1,4 +1,4 @@
-import { NestedObject, UpdatedTranslationItem } from "../type";
+import { NestedObject, TranslationItemWithContext } from "../type";
 import { getContextFromKeysPath } from "./getContextFromKeysPath";
 
 export const getKeyPathItemAndContext = ({
@@ -10,7 +10,7 @@ export const getKeyPathItemAndContext = ({
 }: {
   currentStaged: NestedObject | string;
   currentHead: NestedObject | string | undefined;
-  collectedUpdates: UpdatedTranslationItem[];
+  collectedUpdates: TranslationItemWithContext[];
   originalStaged: NestedObject;
   keyPath?: string[];
 }) => {
