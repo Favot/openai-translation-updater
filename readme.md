@@ -8,7 +8,7 @@ When working on projects that support multiple languages, keeping track of updat
 
 ## Installation
 
-```bash
+```
 npm install translation-hook-assistant
 ```
 
@@ -20,52 +20,13 @@ npm install translation-hook-assistant
 
 3. Make sure your project follows a standardized structure for translation files, e.g., `en.json`, `es.json`, etc.
 
-## Expected JSON Translation File Structure
-
-Your JSON translation file should adhere to the following structure:
-
-```json
-{
-  "appContext": "Description or context about the app",
-  "screen": {
-    "screenName": {
-      "context": "Description or context about the specific screen",
-      "title": "Screen's title translation",
-      "description": "Screen's description translation"
-    },
-    ...
-  },
-  "component": {
-    "componentName": {
-      "context": "Description or context about the specific component",
-      "title": "Component's title translation",
-      "description": "Component's description translation"
-    },
-    ...
-  },
-  "common": {
-    "commonElement": {
-      "context": "Description or context about the common element used across the app",
-      "specificElement": "Translation of the specific element"
-    },
-    ...
-  }
-}
-```
-
-This structure is pivotal for the current version of the `Translation Hook Assistant`. Future versions aim to be more flexible and will accommodate diverse path structures.
-
 ## Usage
 
-1. Import the main function from the package:
+1. Set up the function in a pre-commit script, ensuring you pass the required parameters.
 
 ```typescript
 import { updateTranslationFileOnCommit } from "translation-hook-assistant";
-```
 
-2. Set up the function in a pre-commit hook, ensuring you pass the required parameters.
-
-```typescript
 updateTranslationFileOnCommit({
   openAiApiKey: "YOUR_OPENAI_API_KEY",
   translationDirectory: "path/to/your/translation/files/",
@@ -74,9 +35,25 @@ updateTranslationFileOnCommit({
 });
 ```
 
+2. Create a script that runs the pre-commit script.
+
+```json
+{
+  "scripts": {
+    "updateTranslationOnCommit": "ts-node path/to/pre-commit/script.ts"
+  }
+}
+```
+
 You can use a package like [`husky`](https://www.npmjs.com/package/husky) to easily set up commit hooks.
 
-3. Whenever you make changes to your translation files and commit them, the `updateTranslationFileOnCommit` function will automatically detect changes and update translations for other languages as needed.
+3. Add the script on your pre-commit hook.
+
+```
+npm run updateTranslationOnCommit
+```
+
+4. Whenever you make changes to your translation files and commit them, the `updateTranslationFileOnCommit` function will automatically detect translation change or new key created and update translations for other languages as needed.
 
 ## Configuration
 
@@ -89,7 +66,7 @@ You can use a package like [`husky`](https://www.npmjs.com/package/husky) to eas
 
 ## Limitations
 
-1. Ensure that only one translation file is updated per commit for accuracy.
+1. Ensure that only one translation file is updated per commit for accuracy. (WIP to support multiple files)
 
 2. Make sure your OpenAI API key remains confidential. Never hard-code it directly in your scripts.
 
