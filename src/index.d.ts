@@ -23,10 +23,10 @@ declare module "openai-translation-updater" {
   };
 
   // Main function
-  // export function updateTranslationFileOnCommit(args: {
-  //   openAiApiKey: string | undefined;
-  //   translationDirectory: string;
-  //   defaultLanguage: string;
-  //   otherLanguage: string[];
-  // }): Promise<void>;
+  export function updateTranslationFileOnCommit(args: {
+    openAiApiKey: string | undefined;
+    translationDirectory: string;
+    defaultLanguage: string;
+    otherLanguage: string[];
+  }): Promise<void>;
 }
