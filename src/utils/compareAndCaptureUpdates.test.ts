@@ -60,29 +60,29 @@ describe("compareAndCaptureUpdates", () => {
     expect(result.updatedItems).toHaveLength(0);
   });
 
-  // test("should detect updated translations if the translation is at the secondary key", () => {
-  //   const stagedContent: TranslationSegment = {
-  //     screen: {
-  //       title: "New Welcome",
-  //     },
-  //   };
+  test("should detect updated translations if the translation is at the secondary key", () => {
+    const stagedContent: TranslationSegment = {
+      screen: {
+        title: "New Welcome",
+      },
+    };
 
-  //   const headContent: TranslationSegment = {
-  //     screen: {
-  //       title: "Old Welcome",
-  //     },
-  //   };
+    const headContent: TranslationSegment = {
+      screen: {
+        title: "Old Welcome",
+      },
+    };
 
-  //   const result = compareAndCaptureUpdates({
-  //     stagedContent,
-  //     headContent,
-  //   });
+    const result = compareAndCaptureUpdates({
+      stagedContent,
+      headContent,
+    });
 
-  //   expect(result.updatedItems).toHaveLength(1);
-  //   expect(result.updatedItems[0].listOfKeys).toEqual(["screen", "title"]);
-  //   expect(result.updatedItems[0].itemContext).toBeUndefined();
-  //   expect(result.updatedItems[0].updatedTranslation).toBe("New Welcome");
-  // });
+    expect(result.updatedItems).toHaveLength(1);
+    expect(result.updatedItems[0].listOfKeys).toEqual(["screen", "title"]);
+    expect(result.updatedItems[0].itemContext).toBeUndefined();
+    expect(result.updatedItems[0].updatedTranslation).toBe("New Welcome");
+  });
 
   test("should detect updated translations if the translation is at the primary key", () => {
     const stagedContent: TranslationSegment = {
@@ -240,5 +240,47 @@ describe("compareAndCaptureUpdates", () => {
     ]);
     expect(result.updatedItems[1].itemContext).toBeUndefined();
     expect(result.updatedItems[1].updatedTranslation).toBe("New Welcome");
+  });
+
+  test("Should detect if a new key is added", () => {
+    const stagedContent: TranslationSegment = {
+      screen: {
+        welcomeScreen: {
+          title: "New Welcome",
+          subTitle: "New Subtitle",
+        },
+      },
+    };
+
+    const headContent: TranslationSegment = {
+      screen: {
+        welcomeScreen: {
+          title: "Old Welcome",
+        },
+      },
+    };
+
+    const result: UpdatedTranslationData = compareAndCaptureUpdates({
+      stagedContent,
+      headContent,
+    });
+
+    expect(result.updatedItems).toHaveLength(2);
+    expect(result.updatedItems[0].listOfKeys).toEqual([
+      "screen",
+      "welcomeScreen",
+      "title",
+    ]);
+    expect(result.updatedItems[0].itemContext).toBeUndefined();
+
+    expect(result.updatedItems[0].updatedTranslation).toBe("New Welcome");
+
+    expect(result.updatedItems[1].listOfKeys).toEqual([
+      "screen",
+      "welcomeScreen",
+      "subTitle",
+    ]);
+    expect(result.updatedItems[1].itemContext).toBeUndefined();
+    expect(result.updatedItems[1].updatedTranslation).toBe("New Subtitle");
   });
 });

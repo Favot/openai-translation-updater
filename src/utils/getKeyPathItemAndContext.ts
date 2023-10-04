@@ -9,17 +9,20 @@ export const getKeyPathItemAndContext = ({
   keyPath = [],
 }: {
   currentStaged: NestedObject | string;
-  currentHead: NestedObject | string;
+  currentHead: NestedObject | string | undefined;
   collectedUpdates: UpdatedTranslationItem[];
   originalStaged: NestedObject;
   keyPath?: string[];
 }) => {
-  if (typeof currentStaged === "object" && typeof currentHead === "object") {
+  if (
+    typeof currentStaged === "object" &&
+    (typeof currentHead === "object" || currentHead === undefined)
+  ) {
     for (const key in currentStaged) {
       if (Object.prototype.hasOwnProperty.call(currentStaged, key)) {
         getKeyPathItemAndContext({
           currentStaged: currentStaged[key],
-          currentHead: currentHead[key],
+          currentHead: currentHead ? currentHead[key] : undefined,
           collectedUpdates,
           originalStaged,
           keyPath: keyPath.concat(key),
