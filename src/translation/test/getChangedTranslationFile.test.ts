@@ -15,7 +15,7 @@ describe('getChangedTranslationFile', () => {
 
   it('should skip if no translation file updates are found', async () => {
     // Mock behavior for executeCommand to return null
-    ;(executeCommand as jest.Mock).mockReturnValue(null)
+    (executeCommand as jest.Mock).mockReturnValue(null)
 
     await expect(
       getChangedTranslationFile({ defaultLanguage: 'en' }),
@@ -24,7 +24,7 @@ describe('getChangedTranslationFile', () => {
 
   it('should reject if multiple translation files are updated', async () => {
     // Mock behavior for executeCommand to return two filenames
-    ;(executeCommand as jest.Mock).mockReturnValue('en1.json\nen2.json')
+    (executeCommand as jest.Mock).mockReturnValue('en1.json\nen2.json')
 
     await expect(
       getChangedTranslationFile({ defaultLanguage: 'en' }),
