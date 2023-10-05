@@ -1,4 +1,4 @@
-import { NestedObject, UpdatedTranslationItem } from "../type";
+import { NestedObject, TranslationItemWithContext } from "../type";
 import { getKeyPathItemAndContext } from "./getKeyPathItemAndContext";
 
 export const collectUpdatedItems = ({
@@ -7,8 +7,8 @@ export const collectUpdatedItems = ({
 }: {
   stagedContent: NestedObject;
   headContent: NestedObject;
-}): UpdatedTranslationItem[] => {
-  const updatedItems: UpdatedTranslationItem[] = [];
+}): TranslationItemWithContext[] => {
+  const updatedItems: TranslationItemWithContext[] = [];
   getKeyPathItemAndContext({
     currentStaged: stagedContent,
     currentHead: headContent,

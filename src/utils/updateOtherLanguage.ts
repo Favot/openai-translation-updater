@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Responds, UpdatedTranslatedItem } from "..";
+import { Responds, UpdatedTranslatedItem } from "../type";
 
 export const updateOtherLanguage = ({
   otherLanguage,

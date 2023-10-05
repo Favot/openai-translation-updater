@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { Responds } from "./type";
 import {
   generateOpenAiAssistantContent,
   generateOpenAiSystemContent,
@@ -7,20 +8,6 @@ import {
   updateOtherLanguage,
 } from "./utils";
 import { noTranslationUpdatesFound } from "./utils/getChangedTranslationFile";
-
-export type RespondItem = {
-  updatedTranslation: string;
-  listOfKeys?: string[];
-};
-
-export type UpdatedTranslatedItem = {
-  listOfKeys: string[];
-  updatedTranslation: string;
-};
-
-export type Responds = {
-  [lang: string]: UpdatedTranslatedItem[];
-};
 
 export const updateTranslationFileOnCommit = async ({
   openAiApiKey,
