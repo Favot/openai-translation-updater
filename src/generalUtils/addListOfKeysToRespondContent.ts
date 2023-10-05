@@ -1,4 +1,4 @@
-import { Responds } from '../type'
+import { Responds } from '../type';
 
 export const addListOfKeysToRespondContent = (
   listOfKeys: string[],
@@ -9,10 +9,10 @@ export const addListOfKeysToRespondContent = (
     // Iterate through each item in the array for this language
     responds[lang].forEach((item) => {
       // Add the listOfKeys property to each item
-      item.listOfKeys = listOfKeys
-    })
-  })
+      item.listOfKeys = listOfKeys;
+    });
+  });
 
   // Return the updated responds object
-  return responds
-}
+  return responds;
+};

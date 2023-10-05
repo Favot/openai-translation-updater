@@ -1,4 +1,4 @@
-import { Responds } from '../type'
+import { Responds } from '../type';
 
 export const getIsRespondsValid = (
   responds: Responds,
@@ -9,7 +9,7 @@ export const getIsRespondsValid = (
     isoCodes &&
     !Object.keys(responds).every((lang) => isoCodes.includes(lang))
   ) {
-    return false
+    return false;
   }
 
   // Check if every value in responds is an array of objects with a string property 'updatedTranslation'
@@ -21,5 +21,5 @@ export const getIsRespondsValid = (
           typeof item === 'object' &&
           typeof item.updatedTranslation === 'string',
       ),
-  )
-}
+  );
+};

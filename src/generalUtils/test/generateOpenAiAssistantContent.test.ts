@@ -1,16 +1,16 @@
-import { generateOpenAiAssistantContent } from '../generateOpenAiAssistantContent'
-import { updatedItemToString } from '../updatedItemToString'
+import { generateOpenAiAssistantContent } from '../generateOpenAiAssistantContent';
+import { updatedItemToString } from '../updatedItemToString';
 
 describe('generateOpenAiAssistantContent', () => {
   it('should generate the correct content with the provided languages and data', () => {
-    const mockLanguagesList = ['en', 'es', 'fr']
+    const mockLanguagesList = ['en', 'es', 'fr'];
     const mockUpdatedTranslationData = {
       appContext: 'Some App Context',
       updatedItems: {
         context: 'greeting',
         updatedTranslation: 'Welcome!',
       },
-    }
+    };
 
     const expectedResult = `
     In the next data translate each updatedTranslation key into  this list of language ISO 639-1 Code:
@@ -26,14 +26,14 @@ describe('generateOpenAiAssistantContent', () => {
     data :
       appContext = ${mockUpdatedTranslationData.appContext}
       appKey = ${updatedItemToString(mockUpdatedTranslationData.updatedItems)}
-  `
+  `;
 
     const result = generateOpenAiAssistantContent({
       updatedTranslationData: mockUpdatedTranslationData.updatedItems,
       appContext: mockUpdatedTranslationData.appContext,
       languagesList: mockLanguagesList,
-    })
+    });
 
-    expect(result).toEqual(expectedResult)
-  })
-})
+    expect(result).toEqual(expectedResult);
+  });
+});

@@ -1,12 +1,12 @@
-import fs from 'fs'
-import mockFs from 'mock-fs'
-import path from 'path'
-import { updateOtherLanguage } from '../index'
+import fs from 'fs';
+import mockFs from 'mock-fs';
+import path from 'path';
+import { updateOtherLanguage } from '../index';
 
 describe('updateOtherLanguage', () => {
   afterEach(() => {
-    mockFs.restore() // Restore the normal fs behavior after each test
-  })
+    mockFs.restore(); // Restore the normal fs behavior after each test
+  });
 
   it('should update translation file with new values', () => {
     // Setup mock file system
@@ -18,9 +18,9 @@ describe('updateOtherLanguage', () => {
           },
         }),
       },
-    })
+    });
 
-    const otherLanguage = ['en']
+    const otherLanguage = ['en'];
     const responds = {
       en: [
         {
@@ -28,15 +28,15 @@ describe('updateOtherLanguage', () => {
           updatedTranslation: 'Welcome to the app',
         },
       ],
-    }
-    const translationDirectory = '/translationDir'
+    };
+    const translationDirectory = '/translationDir';
 
-    updateOtherLanguage({ otherLanguage, responds, translationDirectory })
+    updateOtherLanguage({ otherLanguage, responds, translationDirectory });
 
     const updatedFileContent = JSON.parse(
       fs.readFileSync(path.join(translationDirectory, 'en.json'), 'utf-8'),
-    )
+    );
 
-    expect(updatedFileContent.screen.title).toBe('Welcome to the app')
-  })
-})
+    expect(updatedFileContent.screen.title).toBe('Welcome to the app');
+  });
+});
