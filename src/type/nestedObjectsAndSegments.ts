@@ -1,11 +1,11 @@
 export interface BaseTranslationSegment {
-  [key: string]: string | NestedObject;
+  [key: string]: string | NestedObject
 }
 
 export type NestedObject = BaseTranslationSegment & {
-  context?: string;
-};
+  context?: string
+}
 
 export type TranslationSegment = BaseTranslationSegment & {
-  appContext?: string;
-};
+  appContext?: string
+}

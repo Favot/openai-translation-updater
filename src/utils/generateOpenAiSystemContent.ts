@@ -9,7 +9,7 @@ export const generateOpenAiSystemContent = () => {
        }
        ...],
      }
-     `;
+     `
 
-  return systemContent;
-};
+  return systemContent
+}

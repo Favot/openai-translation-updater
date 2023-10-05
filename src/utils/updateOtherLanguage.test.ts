@@ -1,42 +1,42 @@
-import fs from "fs";
-import mockFs from "mock-fs";
-import path from "path";
-import { updateOtherLanguage } from "./updateOtherLanguage";
+import fs from 'fs'
+import mockFs from 'mock-fs'
+import path from 'path'
+import { updateOtherLanguage } from './updateOtherLanguage'
 
-describe("updateOtherLanguage", () => {
+describe('updateOtherLanguage', () => {
   afterEach(() => {
-    mockFs.restore(); // Restore the normal fs behavior after each test
-  });
+    mockFs.restore() // Restore the normal fs behavior after each test
+  })
 
-  it("should update translation file with new values", () => {
+  it('should update translation file with new values', () => {
     // Setup mock file system
     mockFs({
-      "/translationDir": {
-        "en.json": JSON.stringify({
+      '/translationDir': {
+        'en.json': JSON.stringify({
           screen: {
-            title: "Hello",
+            title: 'Hello',
           },
         }),
       },
-    });
+    })
 
-    const otherLanguage = ["en"];
+    const otherLanguage = ['en']
     const responds = {
       en: [
         {
-          listOfKeys: ["screen", "title"],
-          updatedTranslation: "Welcome to the app",
+          listOfKeys: ['screen', 'title'],
+          updatedTranslation: 'Welcome to the app',
         },
       ],
-    };
-    const translationDirectory = "/translationDir";
+    }
+    const translationDirectory = '/translationDir'
 
-    updateOtherLanguage({ otherLanguage, responds, translationDirectory });
+    updateOtherLanguage({ otherLanguage, responds, translationDirectory })
 
     const updatedFileContent = JSON.parse(
-      fs.readFileSync(path.join(translationDirectory, "en.json"), "utf-8")
-    );
+      fs.readFileSync(path.join(translationDirectory, 'en.json'), 'utf-8'),
+    )
 
-    expect(updatedFileContent.screen.title).toBe("Welcome to the app");
-  });
-});
+    expect(updatedFileContent.screen.title).toBe('Welcome to the app')
+  })
+})

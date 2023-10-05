@@ -1,15 +1,15 @@
-import { TranslationKeyList } from "./coreTypes";
+import { TranslationKeyList } from './coreTypes'
 
 export interface BaseTranslationItem {
-  listOfKeys: TranslationKeyList;
-  updatedTranslation: string;
+  listOfKeys: TranslationKeyList
+  updatedTranslation: string
 }
 
 export interface TranslationItemWithContext extends BaseTranslationItem {
-  itemContext?: string;
+  itemContext?: string
 }
 
 export interface TranslationItemForOpenAi {
-  itemContext?: string;
-  updatedTranslation: string;
+  itemContext?: string
+  updatedTranslation: string
 }
