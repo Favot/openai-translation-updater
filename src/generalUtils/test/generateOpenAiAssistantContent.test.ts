@@ -1,5 +1,5 @@
 import { generateOpenAiAssistantContent } from '../generateOpenAiAssistantContent'
-import { updatedItemToString } from '../updatedItemsToString'
+import { updatedItemToString } from '../updatedItemToString'
 
 describe('generateOpenAiAssistantContent', () => {
   it('should generate the correct content with the provided languages and data', () => {

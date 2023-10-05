@@ -1,4 +1,4 @@
-import { updatedItemToString } from '../updatedItemsToString'
+import { updatedItemToString } from '../updatedItemToString'
 
 describe('updatedItemsToString', () => {
   it('should return formatted string for a single item', () => {

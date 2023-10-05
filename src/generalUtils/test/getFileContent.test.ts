@@ -1,8 +1,7 @@
-import { executeCommand } from '../executeCommand'
-import { getFileContent } from '../getFileContent'
+import { executeCommand, getFileContent } from '../../generalUtils'
 
 // Mock the executeCommand module
-jest.mock('./executeCommand')
+jest.mock('../../generalUtils/executeCommand')
 
 describe('getFileContent', () => {
   afterEach(() => {
@@ -21,7 +20,7 @@ describe('getFileContent', () => {
 
   it('should return an empty object if executeCommand outputs nothing', () => {
     // Mock behavior for executeCommand to return null
-    (executeCommand as jest.Mock).mockReturnValue(null)
+    ;(executeCommand as jest.Mock).mockReturnValue(null)
 
     const result = getFileContent('HEAD', 'path/to/file.json')
     expect(result).toEqual({})
