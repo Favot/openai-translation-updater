@@ -4,5 +4,6 @@ export { generateOpenAiAssistantContent } from './generateOpenAiAssistantContent
 export { generateOpenAiSystemContent } from './generateOpenAiSystemContent'
 export { getContextFromKeysPath } from './getContextFromKeysPath'
 export { getFileContent } from './getFileContent'
+export { getIsRespondsValid } from './getIsRespondsValid'
 export { getKeyPathItemAndContext } from './getKeyPathItemAndContext'
 export { updatedItemToString } from './updatedItemToString'
