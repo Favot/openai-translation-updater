@@ -1,14 +1,14 @@
-import { TranslationItemForOpenAi } from '../type'
-import { updatedItemToString } from './updatedItemsToString'
+import { TranslationItemForOpenAi } from '../type';
+import { updatedItemToString } from './updatedItemsToString';
 
 export const generateOpenAiAssistantContent = ({
   updatedTranslationData,
   appContext,
   languagesList,
 }: {
-  updatedTranslationData: TranslationItemForOpenAi
-  appContext: string | null
-  languagesList: string[]
+  updatedTranslationData: TranslationItemForOpenAi;
+  appContext: string | null;
+  languagesList: string[];
 }) => {
   const content = `
     In the next data translate each updatedTranslation key into  this list of language ISO 639-1 Code:
@@ -24,7 +24,7 @@ export const generateOpenAiAssistantContent = ({
     data :
       appContext = ${appContext}
       appKey = ${updatedItemToString(updatedTranslationData)}
-  `
+  `;
 
-  return content
-}
+  return content;
+};

@@ -1,5 +1,5 @@
-import { NestedObject, TranslationItemWithContext } from '../type'
-import { getContextFromKeysPath } from './getContextFromKeysPath'
+import { NestedObject, TranslationItemWithContext } from '../type';
+import { getContextFromKeysPath } from './getContextFromKeysPath';
 
 export const getKeyPathItemAndContext = ({
   currentStaged,
@@ -8,11 +8,11 @@ export const getKeyPathItemAndContext = ({
   originalStaged,
   keyPath = [],
 }: {
-  currentStaged: NestedObject | string
-  currentHead: NestedObject | string | undefined
-  collectedUpdates: TranslationItemWithContext[]
-  originalStaged: NestedObject
-  keyPath?: string[]
+  currentStaged: NestedObject | string;
+  currentHead: NestedObject | string | undefined;
+  collectedUpdates: TranslationItemWithContext[];
+  originalStaged: NestedObject;
+  keyPath?: string[];
 }) => {
   if (
     typeof currentStaged === 'object' &&
@@ -26,7 +26,7 @@ export const getKeyPathItemAndContext = ({
           collectedUpdates,
           originalStaged,
           keyPath: keyPath.concat(key),
-        })
+        });
       }
     }
   } else if (
@@ -40,6 +40,6 @@ export const getKeyPathItemAndContext = ({
         keyPath: keyPath.slice(0, -1),
       }),
       updatedTranslation: currentStaged,
-    })
+    });
   }
-}
+};
