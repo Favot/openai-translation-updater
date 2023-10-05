@@ -1,20 +1,23 @@
-import { TranslationItemForOpenAi } from '../type'
-import { updatedItemToString } from './updatedItemToString'
+import { TranslationItemForOpenAi } from '../type';
 
 export const generateOpenIaAssistantContent = ({
   updatedTranslationData,
   appContext,
   languagesList,
 }: {
-  updatedTranslationData: TranslationItemForOpenAi
-  appContext: string | null
-  languagesList: string[]
+  updatedTranslationData: TranslationItemForOpenAi;
+  appContext: string | null;
+  languagesList: string[];
 }) => {
+  console.log(
+    '🚀 ~ file: generateOpenIaAssistantContent.ts:26 ~ updatedTranslationData.itemContext:',
+    updatedTranslationData,
+  );
   const content = `
     In the next data translate each updatedTranslation key into  this list of language ISO 639-1 Code:
       - ${languagesList.join('\n- ')}
           
-    - Use appContext and screenContext to improve the translation
+    - Use appContext and context to improve the translation
   
     -localize the translation from the country example :
         - en: football , en-us: soccer
@@ -23,8 +26,9 @@ export const generateOpenIaAssistantContent = ({
   
     data :
       appContext = ${appContext}
-      appKey = ${updatedItemToString(updatedTranslationData)}
-  `
+      context: ${updatedTranslationData.itemContext}\n 
+      updatedTranslation: ${updatedTranslationData.updatedTranslation}\n
+  `;
 
-  return content
-}
+  return content;
+};

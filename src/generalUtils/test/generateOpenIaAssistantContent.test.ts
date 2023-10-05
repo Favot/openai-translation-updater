@@ -1,22 +1,21 @@
-import { generateOpenIaAssistantContent } from '../generateOpenIaAssistantContent'
-import { updatedItemToString } from '../updatedItemToString'
+import { generateOpenIaAssistantContent } from '../generateOpenIaAssistantContent';
 
 describe('generateOpenIaAssistantContent', () => {
   it('should generate the correct content with the provided languages and data', () => {
-    const mockLanguagesList = ['en', 'es', 'fr']
+    const mockLanguagesList = ['en', 'es', 'fr'];
     const mockUpdatedTranslationData = {
       appContext: 'Some App Context',
       updatedItems: {
-        context: 'greeting',
+        itemContext: 'greeting',
         updatedTranslation: 'Welcome!',
       },
-    }
+    };
 
     const expectedResult = `
     In the next data translate each updatedTranslation key into  this list of language ISO 639-1 Code:
       - ${mockLanguagesList.join('\n- ')}
           
-    - Use appContext and screenContext to improve the translation
+    - Use appContext and context to improve the translation
   
     -localize the translation from the country example :
         - en: football , en-us: soccer
@@ -25,15 +24,18 @@ describe('generateOpenIaAssistantContent', () => {
   
     data :
       appContext = ${mockUpdatedTranslationData.appContext}
-      appKey = ${updatedItemToString(mockUpdatedTranslationData.updatedItems)}
-  `
+      context: ${mockUpdatedTranslationData.updatedItems.itemContext}\n 
+      updatedTranslation: ${
+        mockUpdatedTranslationData.updatedItems.updatedTranslation
+      }\n
+  `;
 
     const result = generateOpenIaAssistantContent({
       updatedTranslationData: mockUpdatedTranslationData.updatedItems,
       appContext: mockUpdatedTranslationData.appContext,
       languagesList: mockLanguagesList,
-    })
+    });
 
-    expect(result).toEqual(expectedResult)
-  })
-})
+    expect(result).toEqual(expectedResult);
+  });
+});
