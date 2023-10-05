@@ -1,13 +1,13 @@
 import OpenAI from 'openai'
-import { Responds } from './type'
 import {
   generateOpenAiAssistantContent,
   generateOpenAiSystemContent,
   getChangedTranslationFile,
   processTranslatedFile,
   updateOtherLanguage,
-} from './utils'
-import { noTranslationUpdatesFound } from './utils/getChangedTranslationFile'
+} from './generalUtils'
+import { noTranslationUpdatesFound } from './translation/getChangedTranslationFile'
+import { Responds } from './type'
 
 export const updateTranslationFileOnCommit = async ({
   openAiApiKey,
