@@ -1,6 +1,6 @@
 import env from 'dotenv'
+import { executeCommand } from '../src/generalUtils'
 import { updateTranslationFileOnCommit } from '../src/index'
-import { executeCommand } from '../src/utils/executeCommand'
 
 const openAiApiKey = env.config().parsed?.OPENAI_API_KEY
 const translationDirectory = './__test__/localization/translations'
