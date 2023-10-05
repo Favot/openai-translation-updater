@@ -4,14 +4,13 @@ An npm package that automates the process of updating translation files on every
 
 ## Overview
 
-When working on projects that support multiple languages, keeping track of updated translations can be a challenge. The `Translation Hook Assistant` helps you automate this process by using the power of OpenAI's language model, integrating directly into your Git workflow. Every time you make a commit, the `updateTranslationFileOnCommit` function ensures that your translation files are up-to-date, making internationalization seamless and efficient.
+When working on projects that support multiple languages, keeping track of updated translations can be a challenge. The `Translation Hook Assistant` helps you automate this process by leveraging the power of OpenAI's language model, integrating directly into your Git workflow. Every time you make a commit, the `updateTranslationFileOnCommit` function ensures that your translation files are up-to-date, making internationalization seamless and efficient.
 
 ## Enhancing Translations with Context
 
-To achieve more accurate and contextually appropriate translations from OpenAI, you can optionally include appContext and context keys in your translation files. The appContext key can provide general information or context about the application, while the context key can provide context about a specific section or key within the translation file. This additional context can help OpenAI better understand the intended meaning and usage, leading to improved translation quality.
+To achieve more accurate and contextually appropriate translations from OpenAI, you can optionally include `appContext` and `context` keys in your translation files. The `appContext` key can provide general information or context about the application, while the `context` key can provide context about a specific section or key within the translation file. This additional context can help OpenAI better understand the intended meaning and usage, leading to improved translation quality.
 
 ```json
-
 {
   "appContext": "A finance management app",
   "screen": {
@@ -28,7 +27,7 @@ To achieve more accurate and contextually appropriate translations from OpenAI, 
 
 ## Installation
 
-```
+```bash
 npm install translation-hook-assistant
 ```
 
@@ -36,9 +35,9 @@ npm install translation-hook-assistant
 
 1. Obtain an OpenAI API key. If you don’t have one, sign up [here](https://beta.openai.com/signup/).
 
-2. Set up a default translation language and any number of other languages you're targeting for your project.
+2. Set up a default translation language and any number of other languages you're targeting for your project. Make sure to have these files already created before setting up the `updateTranslationFileOnCommit` function.
 
-3. Make sure your project follows a standardized structure for translation files, e.g., `en.json`, `es.json`, etc.
+---
 
 ## Usage
 
@@ -49,7 +48,6 @@ import { updateTranslationFileOnCommit } from 'translation-hook-assistant'
 
 updateTranslationFileOnCommit({
   openAiApiKey: 'YOUR_OPENAI_API_KEY',
-  translationDirectory: 'path/to/your/translation/files/',
   defaultLanguage: 'en',
   otherLanguage: ['es', 'fr', 'de'],
 })
@@ -69,26 +67,27 @@ You can use a package like [`husky`](https://www.npmjs.com/package/husky) to eas
 
 3. Add the script on your pre-commit hook.
 
-```
+```bash
 npm run updateTranslationOnCommit
 ```
 
-4. Whenever you make changes to your translation files and commit them, the `updateTranslationFileOnCommit` function will automatically detect translation change or new key created and update translations for other languages as needed.
+4. Whenever you make changes to your translation files and commit them, the `updateTranslationFileOnCommit` function will automatically detect translation changes or new keys created and update translations for other languages as needed.
+
+---
 
 ## Configuration
 
-| Parameter              | Description                                            |
-| ---------------------- | ------------------------------------------------------ |
-| `openAiApiKey`         | Your OpenAI API key.                                   |
-| `translationDirectory` | Path to your translation files directory.              |
-| `defaultLanguage`      | The default language of your project (e.g., 'en').     |
-| `otherLanguage`        | An array of other languages you want translations for. |
+| Parameter         | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| `openAiApiKey`    | Your OpenAI API key.                                   |
+| `defaultLanguage` | The default language of your project (e.g., 'en').     |
+| `otherLanguage`   | An array of other languages you want translations for. |
+
+---
 
 ## Limitations
 
-1. Ensure that only one translation file is updated per commit for accuracy. (WIP to support multiple files)
-
-2. Make sure your OpenAI API key remains confidential. Never hard-code it directly in your scripts.
+1. Make sure your OpenAI API key remains confidential. Never hard-code it directly in your scripts.
 
 ## Contributing
 
