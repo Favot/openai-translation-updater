@@ -4,7 +4,7 @@ import {
   homeScreenDirectory,
   templateDirectory,
 } from '../config'
-import { TemplateName } from '../type'
+import { TemplateName } from '../jsonTemplate/enum'
 
 export const copyTemplateWithTextToDefaultLanguageFile = ({
   defaultLanguage,
