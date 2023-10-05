@@ -1,5 +1,5 @@
-import { TranslationSegment, UpdatedTranslationData } from "../type";
-import { collectUpdatedItems } from "./collectUpdatedItems";
+import { TranslationSegment, UpdatedTranslationData } from '../type';
+import { collectUpdatedItems } from './collectUpdatedItems';
 
 export const compareAndCaptureUpdates = ({
   stagedContent,

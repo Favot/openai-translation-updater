@@ -1,4 +1,4 @@
-import shell from "shelljs";
+import shell from 'shelljs';
 
 export const executeCommand = (command: string) => {
   const result = shell.exec(command, { silent: true });

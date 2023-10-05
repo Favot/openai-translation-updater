@@ -1,5 +1,5 @@
-import { TranslationItemForOpenAi } from "../type";
-import { updatedItemToString } from "./updatedItemsToString";
+import { TranslationItemForOpenAi } from '../type';
+import { updatedItemToString } from './updatedItemsToString';
 
 export const generateOpenAiAssistantContent = ({
   updatedTranslationData,
@@ -12,7 +12,7 @@ export const generateOpenAiAssistantContent = ({
 }) => {
   const content = `
     In the next data translate each updatedTranslation key into  this list of language ISO 639-1 Code:
-      - ${languagesList.join("\n- ")}
+      - ${languagesList.join('\n- ')}
           
     - Use appContext and screenContext to improve the translation
   

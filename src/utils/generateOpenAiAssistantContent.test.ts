@@ -1,20 +1,20 @@
-import { generateOpenAiAssistantContent } from "./generateOpenAiAssistantContent";
-import { updatedItemToString } from "./updatedItemsToString";
+import { generateOpenAiAssistantContent } from './generateOpenAiAssistantContent';
+import { updatedItemToString } from './updatedItemsToString';
 
-describe("generateOpenAiAssistantContent", () => {
-  it("should generate the correct content with the provided languages and data", () => {
-    const mockLanguagesList = ["en", "es", "fr"];
+describe('generateOpenAiAssistantContent', () => {
+  it('should generate the correct content with the provided languages and data', () => {
+    const mockLanguagesList = ['en', 'es', 'fr'];
     const mockUpdatedTranslationData = {
-      appContext: "Some App Context",
+      appContext: 'Some App Context',
       updatedItems: {
-        context: "greeting",
-        updatedTranslation: "Welcome!",
+        context: 'greeting',
+        updatedTranslation: 'Welcome!',
       },
     };
 
     const expectedResult = `
     In the next data translate each updatedTranslation key into  this list of language ISO 639-1 Code:
-      - ${mockLanguagesList.join("\n- ")}
+      - ${mockLanguagesList.join('\n- ')}
           
     - Use appContext and screenContext to improve the translation
   

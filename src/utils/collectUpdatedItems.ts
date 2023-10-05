@@ -1,5 +1,5 @@
-import { NestedObject, TranslationItemWithContext } from "../type";
-import { getKeyPathItemAndContext } from "./getKeyPathItemAndContext";
+import { NestedObject, TranslationItemWithContext } from '../type';
+import { getKeyPathItemAndContext } from './getKeyPathItemAndContext';
 
 export const collectUpdatedItems = ({
   stagedContent,

@@ -1,4 +1,4 @@
-import { TranslationKeyList } from "./coreTypes";
+import { TranslationKeyList } from './coreTypes';
 
 export interface BaseTranslationItem {
   listOfKeys: TranslationKeyList;

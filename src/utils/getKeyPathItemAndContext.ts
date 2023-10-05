@@ -1,5 +1,5 @@
-import { NestedObject, TranslationItemWithContext } from "../type";
-import { getContextFromKeysPath } from "./getContextFromKeysPath";
+import { NestedObject, TranslationItemWithContext } from '../type';
+import { getContextFromKeysPath } from './getContextFromKeysPath';
 
 export const getKeyPathItemAndContext = ({
   currentStaged,
@@ -15,8 +15,8 @@ export const getKeyPathItemAndContext = ({
   keyPath?: string[];
 }) => {
   if (
-    typeof currentStaged === "object" &&
-    (typeof currentHead === "object" || currentHead === undefined)
+    typeof currentStaged === 'object' &&
+    (typeof currentHead === 'object' || currentHead === undefined)
   ) {
     for (const key in currentStaged) {
       if (Object.prototype.hasOwnProperty.call(currentStaged, key)) {
@@ -30,8 +30,8 @@ export const getKeyPathItemAndContext = ({
       }
     }
   } else if (
-    typeof currentStaged === "string" &&
-    (typeof currentHead !== "string" || currentStaged !== currentHead)
+    typeof currentStaged === 'string' &&
+    (typeof currentHead !== 'string' || currentStaged !== currentHead)
   ) {
     collectedUpdates.push({
       listOfKeys: keyPath,

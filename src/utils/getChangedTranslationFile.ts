@@ -1,7 +1,7 @@
-import { executeCommand } from "./executeCommand";
+import { executeCommand } from './executeCommand';
 
 export const noTranslationUpdatesFound =
-  "No base translation file updates found, skipping";
+  'No base translation file updates found, skipping';
 
 export const getChangedTranslationFile = ({
   defaultLanguage,
@@ -15,13 +15,13 @@ export const getChangedTranslationFile = ({
     return Promise.resolve(noTranslationUpdatesFound);
   }
 
-  const isMultipleFiles = output.split("\n").length > 1;
+  const isMultipleFiles = output.split('\n').length > 1;
 
   if (isMultipleFiles) {
     return Promise.reject(
       new Error(
-        "Multiple translation files updated. Please commit one file at a time"
-      )
+        'Multiple translation files updated. Please commit one file at a time',
+      ),
     );
   }
 

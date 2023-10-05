@@ -45,14 +45,14 @@ npm install translation-hook-assistant
 1. Set up the function in a pre-commit script, ensuring you pass the required parameters.
 
 ```typescript
-import { updateTranslationFileOnCommit } from "translation-hook-assistant";
+import { updateTranslationFileOnCommit } from 'translation-hook-assistant'
 
 updateTranslationFileOnCommit({
-  openAiApiKey: "YOUR_OPENAI_API_KEY",
-  translationDirectory: "path/to/your/translation/files/",
-  defaultLanguage: "en",
-  otherLanguage: ["es", "fr", "de"],
-});
+  openAiApiKey: 'YOUR_OPENAI_API_KEY',
+  translationDirectory: 'path/to/your/translation/files/',
+  defaultLanguage: 'en',
+  otherLanguage: ['es', 'fr', 'de'],
+})
 ```
 
 2. Create a script that runs the pre-commit script.

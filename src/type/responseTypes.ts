@@ -1,5 +1,5 @@
-import { TranslationKeyList } from "./coreTypes";
-import { BaseTranslationItem } from "./translationItems";
+import { TranslationKeyList } from './coreTypes';
+import { BaseTranslationItem } from './translationItems';
 
 export interface RespondItem {
   updatedTranslation: string;

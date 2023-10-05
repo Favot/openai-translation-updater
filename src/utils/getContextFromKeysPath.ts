@@ -1,4 +1,4 @@
-import { NestedObject } from "../type";
+import { NestedObject } from '../type';
 
 export const getContextFromKeysPath = ({
   nestedObject,
@@ -9,7 +9,7 @@ export const getContextFromKeysPath = ({
 }): string | undefined => {
   if (keyPath.length === 0) return nestedObject.context;
   const key = keyPath[0];
-  if (typeof nestedObject[key] === "object") {
+  if (typeof nestedObject[key] === 'object') {
     return getContextFromKeysPath({
       nestedObject: nestedObject[key] as NestedObject,
       keyPath: keyPath.slice(1),
