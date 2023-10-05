@@ -1,8 +1,7 @@
-import { executeCommand } from './executeCommand';
-import { getFileContent } from './getFileContent';
+import { executeCommand, getFileContent } from '../../generalUtils';
 
 // Mock the executeCommand module
-jest.mock('./executeCommand');
+jest.mock('../../generalUtils/executeCommand');
 
 describe('getFileContent', () => {
   afterEach(() => {

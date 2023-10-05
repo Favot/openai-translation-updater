@@ -1,11 +1,10 @@
-import { executeCommand } from './executeCommand';
+import { executeCommand } from '../../generalUtils/executeCommand';
 import {
   getChangedTranslationFile,
   noTranslationUpdatesFound,
-} from './getChangedTranslationFile';
-
+} from '../getChangedTranslationFile';
 // Mock the executeCommand module
-jest.mock('./executeCommand');
+jest.mock('../../generalUtils/executeCommand');
 
 describe('getChangedTranslationFile', () => {
   afterEach(() => {

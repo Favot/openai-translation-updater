@@ -1,6 +1,6 @@
 import * as shell from 'shelljs';
+import { getFileContent } from '../generalUtils/getFileContent';
 import { compareAndCaptureUpdates } from './compareAndCaptureUpdates';
-import { getFileContent } from './getFileContent';
 
 export const processTranslatedFile = (file: string) => {
   if (!shell.test('-f', file)) {

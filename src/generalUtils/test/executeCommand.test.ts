@@ -1,5 +1,5 @@
 import shell from 'shelljs';
-import { executeCommand } from './executeCommand';
+import { executeCommand } from '../executeCommand';
 
 // Mocking shell.js
 jest.mock('shelljs', () => ({

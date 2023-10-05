@@ -1,7 +1,7 @@
 import fs from 'fs';
 import mockFs from 'mock-fs';
 import path from 'path';
-import { updateOtherLanguage } from './updateOtherLanguage';
+import { updateOtherLanguage } from '../index';
 
 describe('updateOtherLanguage', () => {
   afterEach(() => {

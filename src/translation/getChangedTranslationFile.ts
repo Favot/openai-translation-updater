@@ -1,4 +1,4 @@
-import { executeCommand } from './executeCommand';
+import { executeCommand } from '../generalUtils/executeCommand';
 
 export const noTranslationUpdatesFound =
   'No base translation file updates found, skipping';

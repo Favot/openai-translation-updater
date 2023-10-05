@@ -1,5 +1,5 @@
-import { TranslationSegment, UpdatedTranslationData } from '../type';
-import { compareAndCaptureUpdates } from './compareAndCaptureUpdates';
+import { TranslationSegment, UpdatedTranslationData } from '../../type';
+import { compareAndCaptureUpdates } from '../compareAndCaptureUpdates';
 
 describe('compareAndCaptureUpdates', () => {
   test('should detect updated translations if the translation is at the third key', () => {
