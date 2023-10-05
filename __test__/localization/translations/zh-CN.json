@@ -1,41 +1,41 @@
 {
-  "common": {
-    "unit": {
-      "currency": "英镑"
-    },
-    "text": {
-      "validate": "验证按钮",
-      "cancel": "取消按钮"
-    }
-  },
   "error": {
     "message": {
-      "notAuthorized": "未经授权",
-      "notFound": "未找到"
+      "notFound": "未找到",
+      "notAuthorized": "未经授权"
     }
-  },
-  "successMessages": {
-    "Validation": "该消息已经过验证",
-    "Cancel": "该消息已成功取消"
   },
   "component": {
     "input": {
-      "title": "姓",
+      "title": "姓氏",
       "description": "在这里输入您的姓"
     },
     "button": {
-      "title": "打开测试应用的独特模式",
-      "description": "您可以通过按按钮打开模态框"
+      "title": "打开测试应用的唯一模态",
+      "description": "您可以通过按下按钮打开模态框"
     }
   },
+  "common": {
+    "text": {
+      "cancel": "取消按钮",
+      "validate": "验证按钮"
+    },
+    "unit": {
+      "currency": "英镑"
+    }
+  },
+  "successMessages": {
+    "Validation": "消息已经过验证",
+    "Cancel": "消息已成功取消"
+  },
   "screen": {
+    "welcomeScreen": {
+      "title": "欢迎来到应用",
+      "description": "这是应用程序的欢迎屏幕的描述"
+    },
     "mainScreen": {
       "title": "应用的主屏幕",
-      "description": "这是主屏幕的描述，用于测试应用程序在不同语言中的翻译"
-    },
-    "welcomeScreen": {
-      "title": "欢迎使用应用",
-      "description": "这是应用程序的欢迎屏幕的说明"
+      "description": "这是主屏幕的描述，用于测试应用程序在不同语言下的翻译"
     }
   }
 }
