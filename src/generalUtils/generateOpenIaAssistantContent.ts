@@ -1,7 +1,7 @@
 import { TranslationItemForOpenAi } from '../type'
 import { updatedItemToString } from './updatedItemToString'
 
-export const generateOpenAiAssistantContent = ({
+export const generateOpenIaAssistantContent = ({
   updatedTranslationData,
   appContext,
   languagesList,
