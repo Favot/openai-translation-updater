@@ -1,28 +1,22 @@
 {
+  "common": {
+    "unit": {
+      "currency": "Pound Sterling"
+    },
+    "text": {
+      "validate": "Validate Button",
+      "cancel": "Cancel Button"
+    }
+  },
   "error": {
     "message": {
       "notAuthorized": "Not authorized",
       "notFound": "Not found"
     }
   },
-  "common": {
-    "text": {
-      "cancel": "Cancel Button",
-      "validate": "Validate Button"
-    },
-    "unit": {
-      "currency": "Pound Sterling"
-    }
-  },
-  "screen": {
-    "mainScreen": {
-      "title": "Main screen of the app",
-      "description": "This is a description for the main screen to test the app's translation in different languages"
-    },
-    "welcomeScreen": {
-      "title": "Welcome to the app",
-      "description": "This is a description for the welcome screen of the app"
-    }
+  "successMessages": {
+    "Validation": "The message has been validated",
+    "Cancel": "The message has been successfully canceled"
   },
   "component": {
     "input": {
@@ -31,11 +25,17 @@
     },
     "button": {
       "title": "Open the unique modal of the test app",
-      "description": "you can open the pop-up by pressing the button"
+      "description": "you can open the modal by pressing on the button"
     }
   },
-  "successMessages": {
-    "Validation": "The message has been validated",
-    "Cancel": "The message has been canceled successfully"
+  "screen": {
+    "mainScreen": {
+      "title": "Main screen of the app",
+      "description": "This is a description for the main screen to test the translation of the app in different languages"
+    },
+    "welcomeScreen": {
+      "title": "Welcome to the app",
+      "description": "This is a description for the welcome screen of the app"
+    }
   }
 }

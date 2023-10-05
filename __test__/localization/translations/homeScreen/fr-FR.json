@@ -1,0 +1,8 @@
+{
+  "screen": {
+    "homeScreen": {
+      "title": "Accueil",
+      "description": "Cet écran est l'accueil du test de l'application"
+    }
+  }
+}

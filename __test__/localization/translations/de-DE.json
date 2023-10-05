@@ -1,17 +1,31 @@
 {
+  "common": {
+    "unit": {
+      "currency": "Pfund Sterling"
+    },
+    "text": {
+      "validate": "Bestätigen Sie die Schaltfläche",
+      "cancel": "Abbrechen Knopf"
+    }
+  },
   "error": {
     "message": {
       "notAuthorized": "Nicht autorisiert",
       "notFound": "Nicht gefunden"
     }
   },
-  "common": {
-    "text": {
-      "cancel": "Abbrechen-Taste",
-      "validate": "Validieren Schaltfläche"
+  "successMessages": {
+    "Validation": "Die Nachricht wurde validiert",
+    "Cancel": "Die Nachricht wurde erfolgreich abgebrochen"
+  },
+  "component": {
+    "input": {
+      "title": "Nachname",
+      "description": "Geben Sie hier Ihren Nachnamen ein"
     },
-    "unit": {
-      "currency": "Pfund Sterling"
+    "button": {
+      "title": "Öffnen Sie das einzigartige Modal der Test-App",
+      "description": "Sie können das Modal öffnen, indem Sie auf die Schaltfläche drücken"
     }
   },
   "screen": {
@@ -20,22 +34,8 @@
       "description": "Dies ist eine Beschreibung für den Hauptbildschirm, um die Übersetzung der App in verschiedenen Sprachen zu testen"
     },
     "welcomeScreen": {
-      "title": "Willkommen bei der App",
+      "title": "Willkommen in der App",
       "description": "Dies ist eine Beschreibung für den Willkommensbildschirm der App"
     }
-  },
-  "component": {
-    "input": {
-      "title": "Familienname",
-      "description": "Geben Sie hier Ihren Nachnamen ein"
-    },
-    "button": {
-      "title": "Öffnen Sie das einzigartige Modal der Test-App",
-      "description": "Sie können das Pop-up öffnen, indem Sie auf die Schaltfläche drücken"
-    }
-  },
-  "successMessages": {
-    "Validation": "Die Nachricht wurde validiert",
-    "Cancel": "Die Nachricht wurde erfolgreich abgebrochen"
   }
 }
