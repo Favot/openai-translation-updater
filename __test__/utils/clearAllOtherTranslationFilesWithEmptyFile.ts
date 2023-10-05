@@ -1,5 +1,5 @@
 import { executeCommand } from '../../src/generalUtils'
-import { baseDirectory, homeScreenDirectory } from '../type'
+import { baseDirectory, homeScreenDirectory } from '../config'
 
 export const clearAllOtherTranslationFilesWithEmptyFile = ({
   translationFiles,
