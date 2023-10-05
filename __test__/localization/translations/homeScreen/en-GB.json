@@ -3,8 +3,8 @@
   "screen": {
     "homeScreen": {
       "context": "This screen is the home of the app test",
-      "title": "",
-      "description": ""
+      "title": "Home",
+      "description": "This is the description of the home screen"
     }
   }
 }
