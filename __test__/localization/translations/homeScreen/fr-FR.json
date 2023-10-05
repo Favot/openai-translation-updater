@@ -2,7 +2,7 @@
   "screen": {
     "homeScreen": {
       "title": "Accueil",
-      "description": "Cet écran est l'accueil du test de l'application"
+      "description": "Ceci est la description de l'écran d'accueil"
     }
   }
 }

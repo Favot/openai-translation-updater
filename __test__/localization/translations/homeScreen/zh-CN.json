@@ -1,8 +1,8 @@
 {
   "screen": {
     "homeScreen": {
-      "title": "首页",
-      "description": "此屏幕是应用测试的首页"
+      "title": "主页",
+      "description": "这是主屏幕的描述"
     }
   }
 }

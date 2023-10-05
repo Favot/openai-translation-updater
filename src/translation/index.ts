@@ -1,5 +1,6 @@
 export * from './collectUpdatedItems'
 export * from './compareAndCaptureUpdates'
 export * from './getChangedTranslationFiles'
+export * from './getTranslationsFromOpenAI'
 export * from './processTranslatedFile'
 export * from './updateOtherLanguage'
