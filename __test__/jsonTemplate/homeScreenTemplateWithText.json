@@ -1,0 +1,10 @@
+{
+  "appContext": "This is a example for the app testing OpenAI to translate and update translation files",
+  "screen": {
+    "homeScreen": {
+      "context": "This screen is the home of the app test",
+      "title": "Home",
+      "description": "This is the description of the home screen"
+    }
+  }
+}
