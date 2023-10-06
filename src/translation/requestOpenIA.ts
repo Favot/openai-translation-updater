@@ -16,10 +16,6 @@ export const requestOpenIA = async ({
   otherLanguage: string[];
   openAiApiKey: string;
 }) => {
-  console.log(
-    `Request open ai to translate the text: "${updatedItem.updatedTranslation}"`,
-  );
-
   const assistantContent = generateOpenAiAssistantContent({
     updatedTranslationData: updatedItem,
     appContext,
