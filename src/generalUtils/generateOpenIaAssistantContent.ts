@@ -9,10 +9,6 @@ export const generateOpenIaAssistantContent = ({
   appContext: string | null;
   languagesList: string[];
 }) => {
-  console.log(
-    '🚀 ~ file: generateOpenIaAssistantContent.ts:26 ~ updatedTranslationData.itemContext:',
-    updatedTranslationData,
-  );
   const content = `
     In the next data translate each updatedTranslation key into  this list of language ISO 639-1 Code:
       - ${languagesList.join('\n- ')}
