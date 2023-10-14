@@ -5,18 +5,18 @@ import { requestOpenIA } from './requestOpenIA';
 export const getTranslationsFromOpenAI = async ({
   updatedItem,
   appContext,
-  otherLanguage,
+  otherLanguages,
   openAiApiKey,
 }: {
   updatedItem: TranslationItemWithContext;
   appContext: string | null;
-  otherLanguage: string[];
+  otherLanguages: string[];
   openAiApiKey: string;
 }) => {
   const respondContent = await requestOpenIA({
     updatedItem,
     appContext,
-    otherLanguage,
+    otherLanguages,
     openAiApiKey,
   });
 
@@ -26,7 +26,7 @@ export const getTranslationsFromOpenAI = async ({
     Buffer.from(respondContent, 'utf-8').toString('utf-8'),
   );
 
-  const isRespondsValid = getIsRespondsValid(responds, otherLanguage);
+  const isRespondsValid = getIsRespondsValid(responds, otherLanguages);
 
   if (!isRespondsValid) {
     console.warn(

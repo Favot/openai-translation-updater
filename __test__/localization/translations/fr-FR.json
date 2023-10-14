@@ -1,9 +1,32 @@
 {
   "error": {
     "message": {
-      "notFound": "Non trouvé",
-      "notAuthorized": "Non autorisé"
+      "notAuthorized": "Non autorisé",
+      "notFound": "Pas trouvé"
     }
+  },
+  "common": {
+    "text": {
+      "validate": "Bouton de validation",
+      "cancel": "Bouton d'annulation"
+    },
+    "unit": {
+      "currency": "Livre Sterling"
+    }
+  },
+  "screen": {
+    "welcomeScreen": {
+      "title": "Bienvenue dans l'application",
+      "description": "Ceci est une description pour l'écran de bienvenue de l'application"
+    },
+    "mainScreen": {
+      "title": "Écran principal de l'application",
+      "description": "Ceci est une description pour l'écran principal pour tester la traduction de l'application dans différentes langues"
+    }
+  },
+  "successMessages": {
+    "Validation": "Le message a été validé",
+    "Cancel": "Le message a été annulé avec succès"
   },
   "component": {
     "input": {
@@ -11,31 +34,8 @@
       "description": "Tapez votre nom de famille ici"
     },
     "button": {
-      "title": "Ouvrez la modalité unique de l'application de test",
-      "description": "vous pouvez ouvrir la modale en appuyant sur le bouton"
-    }
-  },
-  "common": {
-    "text": {
-      "cancel": "Bouton d'annulation",
-      "validate": "Bouton de validation"
-    },
-    "unit": {
-      "currency": "Livre Sterling"
-    }
-  },
-  "successMessages": {
-    "Validation": "Le message a été validé",
-    "Cancel": "Le message a été annulé avec succès"
-  },
-  "screen": {
-    "welcomeScreen": {
-      "title": "Bienvenue dans l'application",
-      "description": "Ceci est une description pour l'écran d'accueil de l'application"
-    },
-    "mainScreen": {
-      "title": "Écran principal de l'application",
-      "description": "Ceci est une description pour l'écran principal pour tester la traduction de l'application en différentes langues"
+      "title": "ouvrez la modale unique de l'application de test",
+      "description": "Vous pouvez ouvrir le modal en appuyant sur le bouton"
     }
   }
 }
