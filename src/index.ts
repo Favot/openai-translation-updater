@@ -1,1 +1,2 @@
-export * from './features/updateTranslationFileOnCommit';
+export * from './features/updateTranslationFiles';
+export * from './features/updateTranslationFilesOnCommit';
