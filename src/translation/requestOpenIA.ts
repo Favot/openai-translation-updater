@@ -8,18 +8,18 @@ import { TranslationItemWithContext } from '../type';
 export const requestOpenIA = async ({
   updatedItem,
   appContext,
-  otherLanguage,
+  otherLanguages,
   openAiApiKey,
 }: {
   updatedItem: TranslationItemWithContext;
   appContext: string | null;
-  otherLanguage: string[];
+  otherLanguages: string[];
   openAiApiKey: string;
 }) => {
   const assistantContent = generateOpenAiAssistantContent({
     updatedTranslationData: updatedItem,
     appContext,
-    languagesList: otherLanguage,
+    languagesList: otherLanguages,
   });
 
   const systemContent = generateOpenAiSystemContent();
