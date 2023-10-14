@@ -1,9 +1,32 @@
 {
   "error": {
     "message": {
-      "notFound": "Nicht gefunden",
-      "notAuthorized": "Nicht autorisiert"
+      "notAuthorized": "Nicht autorisiert",
+      "notFound": "Nicht gefunden"
     }
+  },
+  "common": {
+    "text": {
+      "validate": "Validierungstaste",
+      "cancel": "Abbrechen Knopf"
+    },
+    "unit": {
+      "currency": "Pfund Sterling"
+    }
+  },
+  "screen": {
+    "welcomeScreen": {
+      "title": "Willkommen in der App",
+      "description": "Dies ist eine Beschreibung für den Willkommensbildschirm der App"
+    },
+    "mainScreen": {
+      "title": "Hauptbildschirm der App",
+      "description": "Dies ist eine Beschreibung für den Hauptbildschirm, um die Übersetzung der App in verschiedenen Sprachen zu testen"
+    }
+  },
+  "successMessages": {
+    "Validation": "Die Nachricht wurde bestätigt",
+    "Cancel": "Die Nachricht wurde erfolgreich abgebrochen"
   },
   "component": {
     "input": {
@@ -11,31 +34,8 @@
       "description": "Geben Sie hier Ihren Nachnamen ein"
     },
     "button": {
-      "title": "Öffnen Sie das einzigartige Modal der Test-App",
+      "title": "öffnen Sie das einzigartige Modal der Test-App",
       "description": "Sie können das Modal öffnen, indem Sie auf die Schaltfläche drücken"
-    }
-  },
-  "common": {
-    "text": {
-      "cancel": "Abbrechen Knopf",
-      "validate": "Schaltfläche validieren"
-    },
-    "unit": {
-      "currency": "Pfund Sterling"
-    }
-  },
-  "successMessages": {
-    "Validation": "Die Nachricht wurde validiert",
-    "Cancel": "Die Nachricht wurde erfolgreich abgebrochen"
-  },
-  "screen": {
-    "welcomeScreen": {
-      "title": "Willkommen bei der App",
-      "description": "Dies ist eine Beschreibung für den Willkommensbildschirm der App"
-    },
-    "mainScreen": {
-      "title": "Hauptbildschirm der App",
-      "description": "Dies ist eine Beschreibung für den Hauptbildschirm, um die Übersetzung der App in verschiedenen Sprache zu testen"
     }
   }
 }

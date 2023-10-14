@@ -2,7 +2,7 @@
   "screen": {
     "homeScreen": {
       "title": "Zuhause",
-      "description": "Dies ist die Beschreibung der Startseite"
+      "description": "Dies ist die Beschreibung des Startbildschirms"
     }
   }
 }
