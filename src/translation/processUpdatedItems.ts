@@ -32,7 +32,7 @@ export const processUpdatedItem = async ({
 
   console.log('update other language');
   updateOtherLanguage({
-    otherLanguage: otherLanguages,
+    otherLanguages,
     responds: updatedRespondContentWithListOfKeys,
     translationDirectory: currentTranslationDirectory,
   });

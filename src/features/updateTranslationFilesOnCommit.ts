@@ -6,7 +6,7 @@ import {
 export const updateTranslationFilesOnCommit = async ({
   openAiApiKey,
   defaultLanguage,
-  otherLanguages: otherLanguage,
+  otherLanguages,
 }: {
   openAiApiKey: string | undefined;
   defaultLanguage: string;
@@ -38,7 +38,7 @@ export const updateTranslationFilesOnCommit = async ({
       processTranslationsFile({
         changedTranslationFile,
         openAiApiKey,
-        otherLanguages: otherLanguage,
+        otherLanguages: otherLanguages,
       });
     });
   } catch (error) {
