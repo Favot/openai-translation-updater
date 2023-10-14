@@ -41,16 +41,38 @@ npm install translation-hook-assistant
 
 ## Usage
 
+### Update Translation Files
+
+1. Set up the function to manually update your translation files.
+
+```typescript
+import { updateTranslationFiles } from 'translation-hook-assistant';
+
+updateTranslationFiles({
+  openAiApiKey: 'YOUR_OPENAI_API_KEY',
+  defaultLanguage: 'en',
+  otherLanguages: ['es', 'fr', 'de'],
+});
+```
+
+2. Run the script whenever you need to update your translation files manually.
+
+```bash
+npm run updateTranslationFiles
+```
+
+### Update Translation Files On Commit
+
 1. Set up the function in a pre-commit script, ensuring you pass the required parameters.
 
 ```typescript
-import { updateTranslationFileOnCommit } from 'translation-hook-assistant'
+import { updateTranslationFilesOnCommit } from 'translation-hook-assistant';
 
-updateTranslationFileOnCommit({
+updateTranslationFilesOnCommit({
   openAiApiKey: 'YOUR_OPENAI_API_KEY',
   defaultLanguage: 'en',
-  otherLanguage: ['es', 'fr', 'de'],
-})
+  otherLanguages: ['es', 'fr', 'de'],
+});
 ```
 
 2. Create a script that runs the pre-commit script.
@@ -65,25 +87,33 @@ updateTranslationFileOnCommit({
 
 You can use a package like [`husky`](https://www.npmjs.com/package/husky) to easily set up commit hooks.
 
-3. Add the script on your pre-commit hook.
+3. Add the script to your pre-commit hook.
 
 ```bash
 npm run updateTranslationOnCommit
 ```
 
-4. Whenever you make changes to your translation files and commit them, the `updateTranslationFileOnCommit` function will automatically detect translation changes or new keys created and update translations for other languages as needed.
+4. Whenever you make changes to your translation files and commit them, the `updateTranslationFilesOnCommit` function will automatically detect translation changes or new keys created and update translations for other languages as needed.
 
 ---
 
 ## Configuration
 
+### Update Translation Files
+
 | Parameter         | Description                                            |
 | ----------------- | ------------------------------------------------------ |
 | `openAiApiKey`    | Your OpenAI API key.                                   |
 | `defaultLanguage` | The default language of your project (e.g., 'en').     |
-| `otherLanguage`   | An array of other languages you want translations for. |
+| `otherLanguages`  | An array of other languages you want translations for. |
 
----
+### Update Translation Files On Commit
+
+| Parameter         | Description                                            |
+| ----------------- | ------------------------------------------------------ |
+| `openAiApiKey`    | Your OpenAI API key.                                   |
+| `defaultLanguage` | The default language of your project (e.g., 'en').     |
+| `otherLanguages`  | An array of other languages you want translations for. |
 
 ## Limitations
 
