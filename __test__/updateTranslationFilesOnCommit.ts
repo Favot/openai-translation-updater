@@ -1,5 +1,5 @@
 import { executeCommand } from '../src/generalUtils';
-import { updateTranslationFileOnCommit } from '../src/index';
+import { updateTranslationFilesOnCommit } from '../src/index';
 import { defaultLanguage, openAiApiKey, otherLanguages } from './config';
 import {
   clearAllOtherTranslationFilesWithEmptyFile,
@@ -28,7 +28,7 @@ copyTemplateWithTextToDefaultLanguageFile({ defaultLanguage });
 stageDefaultLanguageFiles({ defaultLanguage });
 
 console.log('run the script');
-updateTranslationFileOnCommit({
+updateTranslationFilesOnCommit({
   openAiApiKey,
   defaultLanguage: 'en-GB',
   otherLanguages,
