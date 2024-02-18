@@ -19,16 +19,16 @@ export const processUpdatedItem = async ({
   const respondsContent = await getTranslationsFromOpenAI({
     updatedItem,
     appContext,
-    otherLanguages: otherLanguages,
+    otherLanguages,
     openAiApiKey,
   });
 
   if (!respondsContent) return;
 
-  const updatedRespondContentWithListOfKeys = addListOfKeysToRespondContent(
-    updatedItem.listOfKeys,
-    respondsContent,
-  );
+  const updatedRespondContentWithListOfKeys = addListOfKeysToRespondContent({
+    listOfKeys: updatedItem.listOfKeys,
+    responds: respondsContent,
+  });
 
   console.log('update other language');
   updateOtherLanguage({

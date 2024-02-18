@@ -35,7 +35,7 @@ export const processTranslationsFile = async ({
     processUpdatedItem({
       updatedItem,
       appContext,
-      otherLanguages: otherLanguages,
+      otherLanguages,
       openAiApiKey,
       currentTranslationDirectory,
     });

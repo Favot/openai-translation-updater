@@ -1,6 +1,8 @@
 import { executeCommand } from '../generalUtils';
-import { processTranslationsFile } from '../translation';
-import { getUpdatedTranslationFiles } from '../translation/getUpdatedTranslationFiles';
+import {
+  getUpdatedTranslationFiles,
+  processTranslationsFile,
+} from '../translation';
 
 export const updateTranslationFiles = async ({
   defaultLanguage,
@@ -17,8 +19,6 @@ export const updateTranslationFiles = async ({
       return;
     }
 
-    // find all the changed default language files
-
     const changedTranslationFiles = await getUpdatedTranslationFiles({
       defaultLanguage,
     });
@@ -33,10 +33,7 @@ export const updateTranslationFiles = async ({
       return;
     }
 
-    // update translation
     changedTranslationFiles.forEach(async (changedTranslationFile) => {
-      // temporary stage current default language file
-
       executeCommand(`git add ${changedTranslationFile}`);
 
       processTranslationsFile({
@@ -45,7 +42,6 @@ export const updateTranslationFiles = async ({
         otherLanguages,
       });
 
-      // un-staged current default language file
       executeCommand(`git reset HEAD ${changedTranslationFile}`);
     });
   } catch (error) {
